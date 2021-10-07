@@ -1,17 +1,70 @@
 .homeButton {
   color: red;
-  right: 20rem;
 }
 
-.signUpButton {
-  color: green;
-  border-style: double;
-  border-color: black;
-}
-
-.homeDiv {
+.signupButton {
+  position: absolute;
+  right: 4rem;
+  text-decoration: none;
+  border: 0px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
   background-color: white;
-  border-style:solid;
-  border-color: red;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
 
+.signupButton:hover {
+  color: #00000050;
+}
+
+.loginButton {
+  position: absolute;
+  right: 10rem;
+  text-decoration: none;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin-left: 70rem;
+  margin-bottom: 1rem;
+
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  width: 100%;
+  margin-left: 50rem;
+
+}
+
+.header {
+  display: flex;
+  box-shadow: 0 0 1px 1px rgb(50, 55, 50);
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  background-color: rgba(30, 30, 30, 0.6);
+  height: 21px;
+  fill: currentColor;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+}
+
+.nav {
+  background-color: white;
 }
