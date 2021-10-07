@@ -4,7 +4,7 @@
 
 .signupButton {
   position: absolute;
-  right: 4rem;
+  right: 1.5rem;
   text-decoration: none;
   border: 0px solid black;
   padding-left: 20px;
@@ -15,7 +15,7 @@
   background-color: white;
   color: black;
   font-weight: 600;
-  margin-bottom: 1rem;
+  margin-bottom: 6rem;
 }
 
 .signupButton:hover {
@@ -24,7 +24,7 @@
 
 .loginButton {
   position: absolute;
-  right: 10rem;
+  right: 8rem;
   text-decoration: none;
   color: white;
   padding-left: 20px;
@@ -32,7 +32,7 @@
   padding-top: 5px;
   padding-bottom: 5px;
   margin-left: 70rem;
-  margin-bottom: 1rem;
+  margin-bottom: 6rem;
 
 }
 
@@ -41,8 +41,6 @@
   align-items: center;
   height: 65px;
   width: 100%;
-  margin-left: 50rem;
-
 }
 
 .header {
@@ -63,8 +61,27 @@
   left: 0;
   top: 0;
   right: 0;
+  z-index: -1;
 }
 
 .nav {
   background-color: white;
+}
+
+/* .search-bar {
+  margin-left: 15rem;
+  margin-top: 1rem;
+  background-color:white;
+} */
+
+.search-input {
+  margin-left: 14.5rem;
+  margin-top: 6px;
+  border: 1px solid white;
+  height: 27px;
+  width: 58%;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: white;
+  z-index: 10;
 }

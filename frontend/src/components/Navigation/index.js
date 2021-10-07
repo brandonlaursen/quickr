@@ -29,7 +29,7 @@ function Navigation({ isLoaded }){
           <NavLink exact to="/" className='homeButton'>Home</NavLink>
         </div>
         <div className='search-bar'>
-          <input value='search...' className='search-input'></input>
+          <input placeholder='Photos, cars, or albums' className='search-input'></input>
         </div>
           {isLoaded && sessionLinks}
      </div>
