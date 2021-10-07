@@ -22,6 +22,12 @@
   margin-right: 2.5rem;
   /* margin-top: 10rem; */
 }
+@media screen and (max-width: 960px) {
+  .signupButton {
+    display: none;
+  }
+}
+
 
 .signupButton:hover {
   color: #00000050;
@@ -39,6 +45,12 @@
   margin-left: 70rem;
   margin-bottom: 6rem;
 
+}
+
+@media screen and (max-width: 1330px) {
+  .loginButton {
+    display: none;
+  }
 }
 
 .buttonContainer {
@@ -78,6 +90,7 @@
 }
 
 .search-input {
+  /* position: relative; */
   margin-left: 7.5rem;
   margin-top: 4rem;
   border: 1px solid white;
@@ -87,7 +100,22 @@
   outline: 0;
   background-color: white;
   z-index: 1;
+  overflow: hidden;
+  transition: 0.4s;
 }
+
+@media screen and (max-width: 960px) {
+  .search-input {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .search-input {
+    width: 40rem;
+  }
+}
+
 
 .home {
   z-index: 100;

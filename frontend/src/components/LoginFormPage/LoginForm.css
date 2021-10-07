@@ -16,7 +16,7 @@ header a img{
   margin-bottom: 26px;
 }
 .form {
-  position: relative;
+  /* position: fixed; */
   z-index: 1;
   background-color: transparent;
   /* background-image: url(https://tse1.mm.bing.net/th?id=OIP.M-4Yy-rkeutBFjMJeQA5cAHaEK&pid=Api&P=0&w=319&h=180); */
@@ -25,6 +25,8 @@ header a img{
   padding: 45px;
   text-align: center;
   box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+  float:right;
+
 }
 .form input {
   outline: 0;
@@ -75,6 +77,7 @@ header a img{
 .loginTitle {
   font-family: sans-serif;
   font-size: 20px;
+  color: white;
 }
 
 .message{
