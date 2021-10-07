@@ -31,7 +31,7 @@ function LoginFormPage() {
     <div class="form">
       <div class="login">
         <div class="login-header">
-          <h3>LOGIN</h3>
+          <h3 className='loginTitle'>LOGIN</h3>
           <p></p>
         </div>
       </div>
@@ -46,6 +46,7 @@ function LoginFormPage() {
               value={credential}
               onChange={(e) => setCredential(e.target.value)}
               required
+              spellcheck='false'
             />
           </label>
           <label class='passwordLogin'>
@@ -58,6 +59,7 @@ function LoginFormPage() {
             />
           </label>
           <button type="submit">Log In</button>
+          <p class="message">Want to make an account? <a href="/signup">Sign Up</a></p>
       </form>
     </div>
   </div>
