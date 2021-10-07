@@ -1,0 +1,17 @@
+.homeButton {
+  color: red;
+  right: 20rem;
+}
+
+.signUpButton {
+  color: green;
+  border-style: double;
+  border-color: black;
+}
+
+.homeDiv {
+  background-color: white;
+  border-style:solid;
+  border-color: red;
+
+}
