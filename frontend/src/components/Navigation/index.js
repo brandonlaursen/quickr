@@ -24,18 +24,18 @@ function Navigation({ isLoaded }){
   }
 
   return (
-      <div>
+    <div>
+      <div className='search-bar'>
         <div className='header'>
           <div className='home'>
             <NavLink exact to="/" className='homeButton'>quickr</NavLink>
           </div>
 
-        <div className='search-bar'>
           <input placeholder='Photos, cars, or albums' className='search-input'></input>
           {isLoaded && sessionLinks}
         </div>
-      </div>
      </div>
+    </div>
   );
 }
 

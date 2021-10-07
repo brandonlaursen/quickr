@@ -20,7 +20,7 @@
   font-weight: 600;
   margin-bottom: 6rem;
   margin-right: 2.5rem;
-  /* margin-top: 10rem; */
+  margin-top: 6rem;
 }
 @media screen and (max-width: 960px) {
   .signupButton {
@@ -34,7 +34,7 @@
 }
 
 .loginButton {
-  position: absolute;
+   position: absolute;
   right: 10rem;
   text-decoration: none;
   color: white;
@@ -42,8 +42,8 @@
   padding-right: 20px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin-left: 70rem;
-  margin-bottom: 6rem;
+  /* margin-left: 70rem; */
+  /* margin-bottom: 6rem; */
 
 }
 
@@ -57,7 +57,7 @@
   display: flex;
   align-items: center;
   height: 65px;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .header {
@@ -90,18 +90,18 @@
 }
 
 .search-input {
-  /* position: relative; */
+  position: relative;
   margin-left: 7.5rem;
-  margin-top: 4rem;
   border: 1px solid white;
   height: 27px;
-  width: 60rem;
+  width: 55rem;
   padding: 2px 23px 2px 30px;
   outline: 0;
   background-color: white;
   z-index: 1;
   overflow: hidden;
   transition: 0.4s;
+  border-radius: 4px;
 }
 
 @media screen and (max-width: 960px) {
