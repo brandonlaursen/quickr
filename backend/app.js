@@ -24,6 +24,7 @@ app.use(
     },
   })
 );
+
 app.use(routes); // Connect all the routes
 
 // Security Middleware

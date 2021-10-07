@@ -7,7 +7,6 @@ const { User } = require("../../db/models");
 const { check } = require('express-validator');
 const { handleValidationErrors } = require('../../utils/validation');
 
-
 const router = express.Router();
 
 const validateLogin = [
@@ -20,7 +19,6 @@ const validateLogin = [
     .withMessage('Please provide a password.'),
   handleValidationErrors,
 ];
-
 
 // Log in
 router.post(
@@ -47,6 +45,7 @@ router.post(
   }),
 );
 
+//Logout
 router.delete(
   '/',
   (_req, res) => {
