@@ -1,5 +1,8 @@
 .homeButton {
-  color: red;
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 1.5rem;
 }
 
 .signupButton {
@@ -16,6 +19,8 @@
   color: black;
   font-weight: 600;
   margin-bottom: 6rem;
+  margin-right: 2.5rem;
+  /* margin-top: 10rem; */
 }
 
 .signupButton:hover {
@@ -24,7 +29,7 @@
 
 .loginButton {
   position: absolute;
-  right: 8rem;
+  right: 10rem;
   text-decoration: none;
   color: white;
   padding-left: 20px;
@@ -46,7 +51,6 @@
 .header {
   display: flex;
   box-shadow: 0 0 1px 1px rgb(50, 55, 50);
-  width: 100%;
   flex-direction: row;
   align-items: center;
   padding-left: 20px !important;
@@ -61,27 +65,30 @@
   left: 0;
   top: 0;
   right: 0;
-  z-index: -1;
+  width: 100%;
+
 }
 
 .nav {
   background-color: white;
 }
 
-/* .search-bar {
-  margin-left: 15rem;
-  margin-top: 1rem;
-  background-color:white;
-} */
+.search-bar {
+  z-index: 100;
+}
 
 .search-input {
-  margin-left: 14.5rem;
-  margin-top: 6px;
+  margin-left: 7.5rem;
+  margin-top: 4rem;
   border: 1px solid white;
   height: 27px;
-  width: 58%;
+  width: 60rem;
   padding: 2px 23px 2px 30px;
   outline: 0;
   background-color: white;
-  z-index: 10;
+  z-index: 1;
+}
+
+.home {
+  z-index: 100;
 }

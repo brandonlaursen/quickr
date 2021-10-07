@@ -26,12 +26,15 @@ function Navigation({ isLoaded }){
   return (
       <div>
         <div className='header'>
-          <NavLink exact to="/" className='homeButton'>Home</NavLink>
-        </div>
+          <div className='home'>
+            <NavLink exact to="/" className='homeButton'>quickr</NavLink>
+          </div>
+
         <div className='search-bar'>
           <input placeholder='Photos, cars, or albums' className='search-input'></input>
-        </div>
           {isLoaded && sessionLinks}
+        </div>
+      </div>
      </div>
   );
 }

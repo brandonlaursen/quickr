@@ -9,7 +9,6 @@ function HomePage() {
 
   return (
     <div class="bg_image" >
-        <h1>Welcome to quickr</h1>
     </div>
   )
 }
