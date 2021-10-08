@@ -25,6 +25,13 @@ function LoginFormPage() {
         if (data && data.errors) setErrors(data.errors);
       });
   }
+  const demo = (e) => {
+    e.preventDefault();
+    setCredential("Demo-lition");
+    setPassword("password")
+    return dispatch(sessionActions.login("Demo-lition", "password"))
+  };
+
 
   return (
     <div class="login-page">
@@ -59,6 +66,7 @@ function LoginFormPage() {
             />
           </label>
           <button type="submit">Log In</button>
+          <button onMouseDown={demo}>Demo</button>
           <p class="message">Want to make an account? <a href="/signup">Sign Up</a></p>
       </form>
     </div>
