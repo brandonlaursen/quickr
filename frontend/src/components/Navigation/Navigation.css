@@ -1,0 +1,122 @@
+.homeButton {
+  color: white;
+  font-size: 30px;
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+.signupButton {
+  position: absolute;
+  right: 1.5rem;
+  text-decoration: none;
+  border: 0px solid black;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 4px;
+  background-color: white;
+  color: black;
+  font-weight: 600;
+  margin-bottom: 6rem;
+  margin-right: 2.5rem;
+  margin-top: 6rem;
+}
+@media screen and (max-width: 960px) {
+  .signupButton {
+    display: none;
+  }
+}
+
+
+.signupButton:hover {
+  color: #00000050;
+}
+
+.loginButton {
+   position: absolute;
+  right: 10rem;
+  text-decoration: none;
+  color: white;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  /* margin-left: 70rem; */
+  /* margin-bottom: 6rem; */
+
+}
+
+@media screen and (max-width: 1330px) {
+  .loginButton {
+    display: none;
+  }
+}
+
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  height: 65px;
+  /* width: 100%; */
+}
+
+.header {
+  display: flex;
+  box-shadow: 0 0 1px 1px rgb(50, 55, 50);
+  flex-direction: row;
+  align-items: center;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
+  background-color: rgba(30, 30, 30, 0.6);
+  height: 21px;
+  fill: currentColor;
+  margin: 0;
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+
+}
+
+.nav {
+  background-color: white;
+}
+
+.search-bar {
+  z-index: 100;
+}
+
+.search-input {
+  position: relative;
+  margin-left: 7.5rem;
+  border: 1px solid white;
+  height: 27px;
+  width: 55rem;
+  padding: 2px 23px 2px 30px;
+  outline: 0;
+  background-color: white;
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.4s;
+  border-radius: 1px;
+}
+
+@media screen and (max-width: 960px) {
+  .search-input {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1450px) {
+  .search-input {
+    width: 40rem;
+  }
+}
+
+
+.home {
+  z-index: 100;
+}
