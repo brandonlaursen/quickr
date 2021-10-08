@@ -1,3 +1,6 @@
 .signUpForm {
   margin-top: 20rem;
 }
+.error {
+  color: red;
+}
