@@ -54,6 +54,7 @@ header a img{
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
+  margin-bottom: 1rem;
 }
 
 .container {
