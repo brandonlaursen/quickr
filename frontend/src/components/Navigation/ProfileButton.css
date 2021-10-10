@@ -1,0 +1,50 @@
+.userButton {
+  color: red;
+  width: 3rem;
+  height: 2.13rem;
+
+}
+
+.profile-dropdown {
+  position: absolute;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  background-color: transparent;
+  color: white;
+  list-style: none;
+
+}
+
+.profile-dropdown a {
+  color: black;
+  padding: 12px 16px;
+  display: block;
+  padding: 1rem;
+}
+
+.dropdown-container {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownLogOut{
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  border: 0;
+  border-radius: .5rem;
+  padding: 10px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+}
+
+.dropdownContents {
+  margin-top: 1rem;
+}
