@@ -6,6 +6,7 @@ import './HomePage.css'
 
 
 function HomePage({ isLoaded }) {
+
   const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
@@ -26,7 +27,7 @@ function HomePage({ isLoaded }) {
   }
 
   return (
-    <div>
+    <div className='body'>
       {sessionLinks}
     </div>
   )

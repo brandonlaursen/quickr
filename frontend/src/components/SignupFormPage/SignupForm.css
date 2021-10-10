@@ -4,3 +4,16 @@
 .error {
   color: red;
 }
+
+.signUpContainer {
+  border: solid black;
+  display: flex;
+  position: relative;
+  bottom: 10rem;
+  color: white;
+  margin-top: 20rem;
+  flex-flow:column;
+
+}
+
+
