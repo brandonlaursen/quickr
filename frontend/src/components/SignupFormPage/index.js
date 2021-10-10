@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Redirect } from "react-router-dom";
+import { Redirect, NavLink  } from "react-router-dom";
 import * as sessionActions from "../../store/session";
 import './SignupForm.css';
 
@@ -44,42 +44,49 @@ function SignupFormPage() {
         </ul>
         <div  class='signUpContainer'>
           <label>
-            Email
             <input
+              className='signUpFormInput'
               type="text"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
+              placeholder='Email'
             />
           </label>
           <label>
-            Username
             <input
+              className='signUpFormInput'
               type="text"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               required
+              placeholder='Username'
             />
           </label>
           <label>
-            Password
+
             <input
+              className='signUpFormInput'
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              placeholder='Password'
             />
           </label>
           <label>
-            Confirm Password
             <input
+              className='signUpFormInput'
               type="password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
               required
+              placeholder='Confirm Password'
             />
           </label>
-          <button type="submit">Sign Up</button>
+          <button type="submit" className='signUpFormButton'>Sign Up</button>
+          <h3 className='already'>Already a quickr member?</h3>
+          <NavLink to="/login" className='loginButtonSignUp'>Log in here</NavLink>
         </div>
       </form>
     </div>
