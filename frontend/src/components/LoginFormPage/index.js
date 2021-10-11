@@ -40,7 +40,7 @@ function LoginFormPage() {
     <div class="form">
       <div class="login">
         <div class="login-header">
-          <h3 className='loginTitle'>LOGIN</h3>
+          <h3 className='loginTitle'>LOG IN</h3>
           <p></p>
         </div>
       </div>
@@ -49,22 +49,24 @@ function LoginFormPage() {
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
           <label class='userLogin'>
-            Username or Email
+            {/* Username or Email */}
             <input
               type="text"
               value={credential}
               onChange={(e) => setCredential(e.target.value)}
               required
               spellcheck='false'
+              placeholder='Username or Email'
             />
           </label>
           <label class='passwordLogin'>
-            Password
+            {/* Password */}
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              placeholder='Password'
             />
           </label>
           <button type="submit">Log In</button>

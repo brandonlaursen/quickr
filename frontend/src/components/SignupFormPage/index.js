@@ -43,6 +43,7 @@ function SignupFormPage() {
           <ul className='error'>
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
+          <h3 className='signUpTitle'>SIGN UP</h3>
             <label>
               <input
                 className='signUpFormInput'
@@ -85,9 +86,9 @@ function SignupFormPage() {
               />
             </label>
             <button type="submit" className='signUpFormButton'>Sign Up</button>
-            <h3 className='already'>Already a quickr member?
+            <p className='already'>Already a quickr member?
             <NavLink to="/login" className='loginButtonSignUp'>Log in </NavLink>
-            </h3>
+            </p>
         </form>
       </div>
    </div>

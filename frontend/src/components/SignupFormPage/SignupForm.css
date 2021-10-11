@@ -13,7 +13,7 @@
   margin: 0 auto;
   bottom: 10rem;
   color: white;
-  margin-top: 21rem;
+  margin-top: 18rem;
   flex-flow:column;
   background-color:transparent;
   width: 30rem;
@@ -63,4 +63,11 @@
   margin-left: 4px;
   text-decoration: none;
   color: red;
+}
+
+.signUpTitle{
+  font-family: sans-serif;
+  font-size: 20px;
+  color: white;
+  margin-left: 7.5rem;
 }

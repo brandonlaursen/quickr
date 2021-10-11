@@ -26,7 +26,7 @@ header a img{
   text-align: center;
   /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
   float:right;
-  margin-top: 1rem;
+  margin-top: .35rem;
 
 }
 .form input {
@@ -39,6 +39,7 @@ header a img{
   box-sizing: border-box;
   font-size: 14px;
   margin-top: 15px;
+  border-radius: .2rem;
 }
 .form button {
   text-transform: uppercase;
