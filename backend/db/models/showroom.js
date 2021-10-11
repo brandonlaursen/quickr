@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Showroom.associate = function(models) {
     Showroom.belongsTo(models.User, { foreignKey: 'userId' });
-    Showroom.hasMany(models.Image, { foreignKey: 'showroomId' });
+    Showroom.hasMany(models.Car, { foreignKey: 'showroomId' });
   };
   return Showroom;
 };
