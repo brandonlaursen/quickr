@@ -85,8 +85,9 @@ function SignupFormPage() {
               />
             </label>
             <button type="submit" className='signUpFormButton'>Sign Up</button>
-            <h3 className='already'>Already a quickr member?</h3>
-            <NavLink to="/login" className='loginButtonSignUp'>Log in here</NavLink>
+            <h3 className='already'>Already a quickr member?
+            <NavLink to="/login" className='loginButtonSignUp'>Log in </NavLink>
+            </h3>
         </form>
       </div>
    </div>

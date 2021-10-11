@@ -17,7 +17,7 @@
   flex-flow:column;
   background-color:transparent;
   width: 30rem;
-  padding-left: 8.5rem;
+  padding-left: 9.9rem;
 }
 
 .signUpFormButton {
@@ -53,12 +53,14 @@
 
 .already{
   text-align:justify;
-  margin-left: 4.5rem;
-  font-size: 16px;
+  margin-left: 3.7rem;
+  font-family: sans-serif;
+  font-size: 12px;
+  text-decoration: none;
 }
 .loginButtonSignUp{
   text-align:justify;
-  margin-left: 7.7rem;
+  margin-left: 4px;
   text-decoration: none;
   color: red;
 }
