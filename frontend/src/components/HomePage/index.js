@@ -12,7 +12,10 @@ function HomePage({ isLoaded }) {
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <Redirect to='/' />
+      <div>
+        {/* <h1>Hello</h1> */}
+        <Redirect to='/' />
+      </div>
     );
   } else {
     sessionLinks = (
