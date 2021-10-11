@@ -3,7 +3,7 @@ import { NavLink, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Footer from '../Footer/Footer';
 import './HomePage.css'
-
+import CarsContainer from '../Cars/CarsContainer';
 
 function HomePage({ isLoaded }) {
 
@@ -13,8 +13,7 @@ function HomePage({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <div>
-        {/* <h1>Hello</h1> */}
-        <Redirect to='/' />
+        <CarsContainer/>
       </div>
     );
   } else {
