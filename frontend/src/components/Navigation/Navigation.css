@@ -35,7 +35,7 @@
 }
 
 .loginButton {
-   position: absolute;
+  position: absolute;
   right: 10rem;
   text-decoration: none;
   color: white;
@@ -95,14 +95,14 @@
   margin-left: 7.5rem;
   border: 1px solid white;
   height: 27px;
-  width: 55rem;
+  width: 60rem;
   padding: 2px 23px 2px 30px;
   outline: 0;
   background-color: white;
   z-index: 1;
   overflow: hidden;
   transition: 0.4s;
-  border-radius: 1px;
+  border-radius: 2px;
 }
 
 @media screen and (max-width: 960px) {
