@@ -33,63 +33,63 @@ function SignupFormPage() {
           if (data && data.errors) setErrors(data.errors);
         });
     }
-    return setErrors(['Confirm Password field must be the same as the Password field']);
+    return setErrors(['Passwords must match']);
   };
 
   return (
-    <div className='signUpForm' >
-      <form onSubmit={handleSubmit}  >
-        <ul className='error'>
-          {errors.map((error, idx) => <li key={idx}>{error}</li>)}
-        </ul>
-        <div  class='signUpContainer'>
-          <label>
-            <input
-              className='signUpFormInput'
-              type="text"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-              placeholder='Email'
-            />
-          </label>
-          <label>
-            <input
-              className='signUpFormInput'
-              type="text"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-              required
-              placeholder='Username'
-            />
-          </label>
-          <label>
+    <div  class='signUpContainer'>
+      <div className='signUpForm' >
+        <form onSubmit={handleSubmit}  >
+          <ul className='error'>
+            {errors.map((error, idx) => <li key={idx}>{error}</li>)}
+          </ul>
+            <label>
+              <input
+                className='signUpFormInput'
+                type="text"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                placeholder='Email'
+              />
+            </label>
+            <label>
+              <input
+                className='signUpFormInput'
+                type="text"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
+                placeholder='Username'
+              />
+            </label>
+            <label>
 
-            <input
-              className='signUpFormInput'
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
-              placeholder='Password'
-            />
-          </label>
-          <label>
-            <input
-              className='signUpFormInput'
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              required
-              placeholder='Confirm Password'
-            />
-          </label>
-          <button type="submit" className='signUpFormButton'>Sign Up</button>
-          <h3 className='already'>Already a quickr member?</h3>
-          <NavLink to="/login" className='loginButtonSignUp'>Log in here</NavLink>
-        </div>
-      </form>
-    </div>
+              <input
+                className='signUpFormInput'
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                placeholder='Password'
+              />
+            </label>
+            <label>
+              <input
+                className='signUpFormInput'
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                required
+                placeholder='Confirm Password'
+              />
+            </label>
+            <button type="submit" className='signUpFormButton'>Sign Up</button>
+            <h3 className='already'>Already a quickr member?</h3>
+            <NavLink to="/login" className='loginButtonSignUp'>Log in here</NavLink>
+        </form>
+      </div>
+   </div>
   );
 }
 

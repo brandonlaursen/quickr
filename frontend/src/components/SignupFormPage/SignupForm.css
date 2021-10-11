@@ -1,8 +1,9 @@
 .signUpForm {
-  margin-top: 20rem;
+  margin-right: 3rem;
 }
 .error {
   color: red;
+  /* width: 9rem; */
 }
 
 .signUpContainer {
