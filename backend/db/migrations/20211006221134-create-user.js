@@ -22,6 +22,16 @@ module.exports = {
         type: Sequelize.STRING.BINARY,
         allowNull: false,
       },
+      profilePicUrl: {
+        allowNull: false,
+        type: Sequelize.STRING(255),
+        defaultValue: "https://clipartart.com/images/default-profile-picture-clipart-3.jpg",
+      },
+      description: {
+        allowNull: true,
+        type: Sequelize.TEXT,
+        defaultValue: "Desciption",
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,
