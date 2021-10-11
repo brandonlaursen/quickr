@@ -1,0 +1,29 @@
+.footer {
+    display: flex;
+    background-color: black;
+    color: white;
+    bottom: 0;
+    z-index: 10;
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 4px;
+    padding-bottom: 4px ;
+    text-align: center;
+}
+
+.created {
+  font-size: 14px;
+}
+
+.fa-linkedin {
+  width: 3rem;
+  color: red;
+}
+
+.fa-github-square {
+  color: red;
+}

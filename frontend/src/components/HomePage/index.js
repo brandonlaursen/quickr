@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-
+import Footer from '../Footer/Footer';
 import './HomePage.css'
 
 
@@ -29,6 +29,7 @@ function HomePage({ isLoaded }) {
   return (
     <div className='body'>
       {sessionLinks}
+    <Footer />
     </div>
   )
 }
