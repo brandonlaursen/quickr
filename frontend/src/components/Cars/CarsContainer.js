@@ -1,14 +1,17 @@
 import styles from './Cars.css'
-import { getCars } from '../../store/cars';
+import { getUserCars } from '../../store/cars';
 import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
+import { restoreUser } from '../../store/session'
 
 const CarsContainer = () => {
   const cars = useSelector(state => state.car.cars);
+
+  const user = useSelector(state => state.session.user)
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getCars()).then(() => console.log(cars))
+    dispatch(restoreUser()).then(() => dispatch(getUserCars(user.id)))
   },[dispatch])
 
   return (

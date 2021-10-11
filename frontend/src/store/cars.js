@@ -1,26 +1,38 @@
-
-
 const LOAD_CARS = 'cars/loadCars'
 
-const loadCars = (cars) => {
+const loadCars = (cars, userId) => {
   return {
     type: LOAD_CARS,
-    payload: cars
+    payload: cars,
+    userId
   }
 }
 
-
-export const getCars = () => async (dispatch) => {
-  const response = await fetch('/api/car', {
+//get a users car
+export const getUserCars = (userId) => async(dispatch) => {
+  const response = await fetch(`/api/car/${userId}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
     }
   });
-
   const cars = await response.json();
-  dispatch(loadCars(cars))
+  dispatch(loadCars(cars, userId))
 }
+
+
+// //get all cars
+// export const getCars = () => async (dispatch) => {
+//   const response = await fetch('/api/car', {
+//     method: "GET",
+//     headers: {
+//       "Content-Type": "application/json",
+//     }
+//   });
+
+//   const cars = await response.json();
+//   dispatch(loadCars(cars))
+// }
 
 const initialState = {cars:null, car:null};
 
