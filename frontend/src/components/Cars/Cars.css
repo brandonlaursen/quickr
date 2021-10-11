@@ -1,0 +1,29 @@
+.carImageContainer {
+  /* border: solid black; */
+  width: 30rem;
+  /* margin-left: 36.3rem; */
+  /* background-color: white; */
+  margin-top: 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+
+.carName {
+  color: black
+}
+
+.carImage {
+  height: 20rem;
+  width: 30rem;
+  vertical-align: middle;
+}
+
+.carDescription {
+  color: black;
+}
+
+.column{
+  flex: 50%;
+}

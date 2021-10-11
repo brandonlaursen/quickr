@@ -9,14 +9,17 @@ const CarsContainer = () => {
 
   useEffect(() => {
     dispatch(getCars()).then(() => console.log(cars))
-  },[dispatch, cars])
+  },[dispatch])
 
   return (
-    <div>
+    <div className='carImageContainer'>
       {cars && cars.map((car) =>
       <>
-      <img src={car.imageUrl} alt="car"></img>
-      <h1>{car.description}</h1>
+      <div className='column'>
+        {/* <h1 className='carName'>{car.name}</h1> */}
+        <img src={car.imageUrl} alt="car" className='carImage'></img>
+        {/* <p className='carDescription'>{car.description}</p> */}
+      </div>
       </>
       )}
     </div>
