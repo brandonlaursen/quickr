@@ -30,7 +30,7 @@ module.exports = {
       description: {
         allowNull: true,
         type: Sequelize.TEXT,
-        defaultValue: "Desciption",
+        defaultValue: "Description",
       },
       createdAt: {
         allowNull: false,
