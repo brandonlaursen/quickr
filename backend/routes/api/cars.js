@@ -53,8 +53,8 @@ router.post('/', asyncHandler(async(req, res) => {
   const car = await Car.build({ userId, name, description, imageUrl });
 
   await car.save();
-  const cars = await Car.findAll({ where: { userId }});
-  return res.json(cars)
+  // const cars = await Car.findAll({ where: { userId }});
+  return res.json(car)
 
 }));
 

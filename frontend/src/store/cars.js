@@ -16,7 +16,7 @@ const loadCars = (cars, userId) => {
   }
 }
 
-//get all the cars of a user
+//get all the cars of a user works
 export const getUserCars = (userId) => async(dispatch) => {
   const res = await fetch(`/api/cars/${userId}`, {
     method: "GET",
@@ -38,7 +38,7 @@ const loadCar = (car) => {
   }
 }
 
-//get a single car with a specific id
+//get a single car with a specific id works
 export const getCar = (carId) => async(dispatch) => {
   const res = await fetch(`/api/cars/car/${carId}`, {
     method: "GET",
@@ -62,23 +62,37 @@ const addCar = (car) => {
 }
 
 // upload a new car
-export const createCar = (newCar) => async(dispatch) => {
-  const { userId, name, description, imageUrl } = newCar;
+// export const createCar = (newCar) => async(dispatch) => {
+//   const { userId, name, description, imageUrl } = newCar;
 
-  const formData = new FormData();
-  formData.append('userId', userId);
+//   const formData = new FormData();
+//   formData.append('userId', userId);
 
-  if (imageUrl) formData.append("imageUrl", imageUrl);
-  formData.append("description", description, "name", name);
+//   if (imageUrl) formData.append("imageUrl", imageUrl);
+//   formData.append("description", description, "name", name);
 
-  const res = await csrfFetch('/api/car', {
-    method: 'POST',
-    headers: { "Content-Type": "application/json" },
-    body: formData
-  });
+//   const res = await csrfFetch('/api/cars/', {
+//     method: 'POST',
+//     headers: { "Content-Type": "application/json" },
+//     body: formData
+//   });
 
-  const data = await res.json();
-  dispatch(addCar(data));
+//   const data = await res.json();
+//   dispatch(addCar(data));
+// }
+
+export const createCar = (newCar) => async dispatch => {
+  const res = await csrfFetch('/api/cars/', {
+        method: 'POST',
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(newCar),
+      });
+
+  if(res.ok) {
+    const car = await res.json();
+    dispatch(addCar(car))
+    return car;
+  }
 }
 
 // ---------------------------------------------------------------------
@@ -109,7 +123,11 @@ const carsReducer = (state = initialState, action) => {
     case LOAD_CAR:
       return {...state, [action.payload.car.id]:action.payload.car}
     case ADD_CAR:
-      return {...state, car: action.payload.car}
+      // if(!state.cars[action.payload.car.id])
+      const newState = {
+        ...state, list: { ...state.cars, test: action.payload }
+      }
+      return newState;
     default:
       return state;
   }
