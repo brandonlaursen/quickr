@@ -3,7 +3,8 @@ import { csrfFetch } from './csrf';
 const LOAD_CARS = 'cars/loadCars'
 const LOAD_CAR = 'cars/loadCar'
 const ADD_CAR = 'cars/addCar'
-const REMOVE_CAR = 'cars/removeCar'
+// const REMOVE_CAR = 'cars/removeCar'
+const EDIT_CAR = 'cars/addCar'
 
 // ---------------------------------------------------------------------
 
@@ -96,14 +97,35 @@ export const deleteCar = (carId) => async dispatch => {
   return car;
 
 }
+// ---------------------------------------------------------------------
+
+//WORKING ON EDIT IMAGE
+//const EDIT_CAR = 'cars/addCar'
+
+const update = (carId) => ({
+  type: EDIT_CAR,
+  payload: carId,
+});
 
 
+export const editCar = (carId) => async dispatch => {
+  const res = await csrfFetch(`/api/cars/car/${carId}/edit`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(carId),
+  });
 
-
-
-
+  const car = await res.json();
+  dispatch(update(car));
+  return car;
+}
 
 // ---------------------------------------------------------------------
+
+
+
 
 
 

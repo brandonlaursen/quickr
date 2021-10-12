@@ -43,8 +43,6 @@ router.get('/car/:id', asyncHandler(async(req, res) => {
 }))
 
 
-//WORKING ON ---------------
-
 
 //upload a car(create) WORKS
 router.post('/', asyncHandler(async(req, res) => {
@@ -58,10 +56,8 @@ router.post('/', asyncHandler(async(req, res) => {
 
 }));
 
-//WORKING ON ---------------
 
-
-//delete a car(destroy) TBD
+//delete a car(destroy) WORKS
 router.delete('/car/:id/delete', asyncHandler(async(req, res) => {
   const id = parseInt(req.params.id, 10);
 
@@ -75,7 +71,7 @@ router.delete('/car/:id/delete', asyncHandler(async(req, res) => {
 }))
 
 
-
+//WORKING ON ---------------
 
 
 
@@ -83,14 +79,14 @@ router.delete('/car/:id/delete', asyncHandler(async(req, res) => {
 
 
 //edit a car(update) TBD
-router.put('/car/:id(\\d+)/edit', asyncHandler(async(req, res) => {
-  const { description } = req.body;
+router.put('/car/:id/edit', asyncHandler(async(req, res) => {
+  const { description, name, imageUrl } = req.body;
 
-  const id= parseInt(req.params.id, 10);
+  const id = parseInt(req.params.id, 10);
 
   const car = await Car.findByPk(id);
 
-  await car.update({ description });
+  await car.update({ description, name, imageUrl });
   return res.json(car);
 }));
 

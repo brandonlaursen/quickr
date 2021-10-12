@@ -10,7 +10,7 @@ import HomePage from "./components/HomePage";
 import LoginFormPage from './components/LoginFormPage';
 import UploadPage from './components/UploadPage'
 import Car from "./components/Car/SingleCar";
-
+import Edit from './components/Edit/EditForm'
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,6 +37,9 @@ function App() {
           </Route>
           <Route path="/car/:carId">
             <Car />
+          </Route>
+          <Route path="/car/:carId/edit">
+            <Edit />
           </Route>
           <Route>
             Page Not Found

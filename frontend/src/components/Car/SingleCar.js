@@ -38,7 +38,7 @@ const Car = () => {
       <img src={car?.imageUrl} alt="car" className='carImage' ></img>
       <button onClick={removeCar}>Delete</button>
       <NavLink to="/"> <button>Back to Images</button> </NavLink>
-      <button>Edit</button>
+      <NavLink to={`/car/${car?.id}/edit`}> <button>Edit</button> </NavLink>
       <p className='carDescription'>{car?.description}</p>
     </div>
   )
