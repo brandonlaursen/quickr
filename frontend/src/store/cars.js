@@ -1,3 +1,5 @@
+import { csrfFetch } from './csrf';
+
 const LOAD_CARS = 'cars/loadCars'
 const LOAD_CAR = 'cars/loadCar'
 const ADD_CAR = 'cars/addCar'
@@ -39,7 +41,7 @@ const loadCar = (car, userId) => {
 
 //get a single car with a specific id
 export const getCar = (carId) => async(dispatch) => {
-  const res = await fetch(`/api/user/car/${carId}`, {
+  const res = await fetch(`/api/car/${carId}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -105,16 +107,11 @@ const carsReducer = (state = initialState, action) => {
   let newState;
   switch(action.type) {
     case LOAD_CARS:
-      // const newState = {...state};
-      // action.cars.forEach(car => {
-      //   newState[car.id] = car;
-      // });
-      // return newState;
       return {...state, cars: action.payload.car}
+    case LOAD_CAR:
+      return {...state, car: action.payload.car}
     case ADD_CAR:
-      newState = Object.assign({}, state);
-      newState['cars'] = action.car;
-      return newState;
+      return {...state, car: action.payload.car}
     default:
       return state;
   }

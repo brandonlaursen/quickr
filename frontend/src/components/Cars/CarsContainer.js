@@ -22,7 +22,8 @@ const CarsContainer = () => {
       <>
       <div className='column'>
         {/* <h1 className='carName'>{car.name}</h1> */}
-        <img src={car.imageUrl} alt="car" className='carImage'></img>
+        {/* <img src={car.imageUrl} alt="car" className='carImage'></img> */}
+        <NavLink to="/car/:carId"><img src={car.imageUrl} alt="car" className='carImage'></img></NavLink>
         {/* <p className='carDescription'>{car.description}</p> */}
       </div>
       </>

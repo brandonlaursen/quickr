@@ -7,9 +7,27 @@ import { useSelector } from 'react-redux';
 
 function Upload () {
   return(
-    <div>
-      <h1>TEST</h1>
-    </div>
+    <section  className='carForm'>
+      <form >
+        <input
+          type="text"
+          placeholder="Name"
+          required
+           />
+        <input
+          type="text"
+          placeholder="Description"
+          required
+           />
+        <input
+          type="text"
+          placeholder="ImageUrl"
+          required
+         />
+        <button type="submit">Upload Car</button>
+        <button type="button" >Cancel</button>
+      </form>
+    </section>
   )
 }
 

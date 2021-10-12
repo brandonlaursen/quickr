@@ -9,6 +9,7 @@ import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import LoginFormPage from './components/LoginFormPage';
 import UploadPage from './components/UploadPage'
+import Car from "./components/Car/SingleCar";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,12 @@ function App() {
           </Route>
           <Route path="/upload">
             <UploadPage />
+          </Route>
+          <Route path="/car/:carId">
+            <Car />
+          </Route>
+          <Route>
+            Page Not Found
           </Route>
         </Switch>
       )}
