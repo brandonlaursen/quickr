@@ -1,12 +1,14 @@
 .carImageContainer {
   /* border: solid black; */
-  width: 30rem;
+  /* width: 30rem; */
   /* margin-left: 36.3rem; */
   /* background-color: white; */
-  margin-top: 10rem;
+  margin-top: 8rem;
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  /* align-items: center; */
+  justify-content: center;
 }
 
 
@@ -18,22 +20,26 @@
   height: 20rem;
   width: 30rem;
   vertical-align: middle;
+
 }
 
 .carDescription {
   color: black;
 }
 
-.column{
-  flex: 50%;
-}
+/* .column{
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 2vw);
+  grid-gap: 1px;
+} */
 
 .Upload {
   text-transform: uppercase;
   outline: 0;
   background-color: #328f8a;
   background-image: linear-gradient(45deg,grey,red);
-  width: 60%;
+  /* width: 4re; */
   border: 0;
   border-radius: .5rem;
   padding: 15px;
@@ -45,5 +51,16 @@
   margin-bottom: 1rem;
   text-align: center;
   text-decoration: none;
-  margin-left: 5rem;
+}
+
+.carImages {
+  width: 100%;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap:wrap;
+  gap: 1rem;
+  margin: 0 auto;
+  margin-bottom: 12rem;
+  /* background-color: red; */
 }
