@@ -16,13 +16,14 @@ const Car = () => {
 
   useEffect(() => {
      dispatch(getCar(carId))
-     console.log(car)
+     
   },[dispatch])
 
   return (
     <div>
       <h1>{car?.name}</h1>
-      <h2>test</h2>
+      <img src={car?.imageUrl} alt="car" className='carImage' ></img>
+      <p className='carDescription'>{car?.description}</p>
     </div>
   )
 }

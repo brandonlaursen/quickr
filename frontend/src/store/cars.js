@@ -30,7 +30,7 @@ export const getUserCars = (userId) => async(dispatch) => {
 
 // ---------------------------------------------------------------------
 
-// load a single car IN PROGRESS
+// load a single car Works
 const loadCar = (car) => {
   return {
     type: LOAD_CAR,
@@ -54,11 +54,10 @@ export const getCar = (carId) => async(dispatch) => {
 // ---------------------------------------------------------------------
 
 //add a new car IN PROGRESS
-const addCar = (cars, userId) => {
+const addCar = (car) => {
   return {
     type: ADD_CAR,
-    payload: cars,
-    userId
+    payload: car,
   }
 }
 
