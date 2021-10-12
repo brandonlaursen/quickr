@@ -8,6 +8,7 @@ import SignupFormPage from "./components/SignupFormPage";
 import Navigation from "./components/Navigation";
 import HomePage from "./components/HomePage";
 import LoginFormPage from './components/LoginFormPage';
+import UploadPage from './components/UploadPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -29,6 +30,9 @@ function App() {
           </Route>
           <Route path="/login">
             <LoginFormPage />
+          </Route>
+          <Route path="/upload">
+            <UploadPage />
           </Route>
         </Switch>
       )}
