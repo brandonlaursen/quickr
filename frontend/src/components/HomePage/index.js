@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import Footer from '../Footer/Footer';
 import './HomePage.css'
 import CarsContainer from '../Cars/CarsContainer';
+import Car from '../Car/SingleCar'
 
 function HomePage({ isLoaded }) {
 
@@ -23,6 +24,7 @@ function HomePage({ isLoaded }) {
           <h2 className='homeTitle'> Find your dream your car.</h2>
           <h3 className='homeDescription'>Join like minded car enthusiasts today.</h3>
           <NavLink to="/signup" className='signupButtonHome'>Sign Up</NavLink>
+          {/* <Car/> */}
         </div>
       </>
     );

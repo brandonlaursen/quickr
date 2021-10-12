@@ -6,7 +6,7 @@ const router = express.Router();
 
 
 
-//get all cars of any user*
+//get all cars of any user WORKS
 router.get('/', asyncHandler(async(req, res) => {
   const car = await Car.findAll();
 
@@ -14,7 +14,7 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 
-// get all cars of specific user
+// get all cars of specific user WORKS
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10);
 
@@ -25,7 +25,7 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 
-// get car
+// get car TBD
 router.get('/car/:id(\\d+)', asyncHandler(async (req, res) => {
   const carId = parseInt(req.params.id, 10);
   const car = await Car.findByPk(carId)
@@ -33,7 +33,11 @@ router.get('/car/:id(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 
-//upload a car(create)
+
+//WORKING ON ---------------
+
+
+//upload a car(create) TBD Tomorrow
 router.post('/', asyncHandler(async(req, res) => {
   const { userId, name, description, imageUrl } = req.body;
 
@@ -45,8 +49,16 @@ router.post('/', asyncHandler(async(req, res) => {
 
 }));
 
+//WORKING ON ---------------
 
-//get a single car(read)
+
+
+
+
+
+
+
+//get a single car(read) TBD
 router.get('/:id', asyncHandler(async(req, res) => {
 
   const id = parseInt(req.params.id, 10);
@@ -56,7 +68,7 @@ router.get('/:id', asyncHandler(async(req, res) => {
 }))
 
 
-//edit a car(update)
+//edit a car(update) TBD
 router.put('/:id(\\d+)/edit', asyncHandler(async(req, res) => {
   const { description } = req.body;
 
@@ -71,7 +83,7 @@ router.put('/:id(\\d+)/edit', asyncHandler(async(req, res) => {
 
 
 
-//delete a car(destroy)
+//delete a car(destroy) TBD
 router.delete('/:id(\\d+)/delete', asyncHandler(async(req, res) => {
   const id = parseInt(req.params.id, 10);
 
