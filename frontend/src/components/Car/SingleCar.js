@@ -33,13 +33,17 @@ const Car = () => {
 
 
   return (
-    <div>
-      <h1>{car?.name}</h1>
+    <div className='singleCarComponent'>
+      <h1 className='singleCarName'>{car?.name}</h1>
       <img src={car?.imageUrl} alt="car" className='carImage' ></img>
-      <button onClick={removeCar}>Delete</button>
-      <NavLink to="/"> <button>Back to Images</button> </NavLink>
-      <NavLink to={`/car/${car?.id}/edit`}> <button>Edit</button> </NavLink>
-      <p className='carDescription'>{car?.description}</p>
+      <div className='buttonContainer'>
+        <button onClick={removeCar} className='delete'>Delete</button>
+        <NavLink to="/"> <button className='back'>Back to Images</button> </NavLink>
+        <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink>
+      </div>
+      <div className='descriptionContainer'>
+        <p className='singleCarDescription'>{car?.description}</p>
+      </div>
     </div>
   )
 }

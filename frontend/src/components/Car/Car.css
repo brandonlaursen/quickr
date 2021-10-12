@@ -1,0 +1,76 @@
+.singleCarComponent {
+  position: absolute;
+  top:15%;
+  left:35.5%;
+  right: 35.5%;
+}
+
+.singleCarName{
+  color: white;
+  text-align: center;
+}
+.descriptionContainer {
+  border: solid black;
+  padding: 1rem;
+  background-color: grey;
+}
+.singleCarDescription {
+  color:black;
+}
+
+.buttonContainer {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.delete{
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 6em;
+  border: 0;
+  border-radius: .5rem;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+.back {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 100%;
+  border: 0;
+  border-radius: .5rem;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-left: 2rem;
+}
+.edit {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 5rem;
+  border: 0;
+  border-radius: .5rem;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-left: 4rem;
+}
