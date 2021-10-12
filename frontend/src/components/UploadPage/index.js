@@ -16,6 +16,7 @@ function Upload () {
   const updateName = (e) => setName(e.target.value);
   const updateDescription = (e) => setDescription(e.target.value);
   const updateImageUrl = (e) => setImageUrl(e.target.value);
+  
 
   return(
     <section  className='carForm'>
