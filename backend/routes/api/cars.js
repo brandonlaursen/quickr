@@ -25,13 +25,22 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 
-// get car TBD
-router.get('/car/:id(\\d+)', asyncHandler(async (req, res) => {
-  const carId = parseInt(req.params.id, 10);
-  const car = await Car.findByPk(carId)
-  return res.json({ car })
-}));
+// get single car works
+// router.get('/cars/:id(\\d+)', asyncHandler(async (req, res) => {
+//   const carId = parseInt(req.params.id, 10);
+//   const car = await Car.findByPk(carId)
+//   return res.json({ car })
+// }));
 
+
+// get a single car(read) works
+router.get('/car/:id', asyncHandler(async(req, res) => {
+
+  const id = parseInt(req.params.id, 10);
+
+  const car = await Car.findByPk(id)
+  return res.json({ car })
+}))
 
 
 //WORKING ON ---------------
@@ -58,18 +67,11 @@ router.post('/', asyncHandler(async(req, res) => {
 
 
 
-//get a single car(read) TBD
-router.get('/:id', asyncHandler(async(req, res) => {
 
-  const id = parseInt(req.params.id, 10);
-
-  const car = await Car.findByPk(id)
-  return res.json({ car })
-}))
 
 
 //edit a car(update) TBD
-router.put('/:id(\\d+)/edit', asyncHandler(async(req, res) => {
+router.put('/car/:id(\\d+)/edit', asyncHandler(async(req, res) => {
   const { description } = req.body;
 
   const id= parseInt(req.params.id, 10);
@@ -84,7 +86,7 @@ router.put('/:id(\\d+)/edit', asyncHandler(async(req, res) => {
 
 
 //delete a car(destroy) TBD
-router.delete('/:id(\\d+)/delete', asyncHandler(async(req, res) => {
+router.delete('/car/:id(\\d+)/delete', asyncHandler(async(req, res) => {
   const id = parseInt(req.params.id, 10);
 
   const car = await Car.findByPk(id);

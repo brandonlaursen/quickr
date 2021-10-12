@@ -18,7 +18,7 @@ const loadCars = (cars, userId) => {
 
 //get all the cars of a user
 export const getUserCars = (userId) => async(dispatch) => {
-  const res = await fetch(`/api/car/${userId}`, {
+  const res = await fetch(`/api/cars/${userId}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -31,17 +31,16 @@ export const getUserCars = (userId) => async(dispatch) => {
 // ---------------------------------------------------------------------
 
 // load a single car IN PROGRESS
-const loadCar = (car, userId) => {
+const loadCar = (car) => {
   return {
     type: LOAD_CAR,
     payload: car,
-    userId
   }
 }
 
 //get a single car with a specific id
 export const getCar = (carId) => async(dispatch) => {
-  const res = await fetch(`/api/car/${carId}`, {
+  const res = await fetch(`/api/cars/car/${carId}`, {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
@@ -49,7 +48,7 @@ export const getCar = (carId) => async(dispatch) => {
   });
 
   const car = await res.json();
-  dispatch(loadCar(car, carId))
+  dispatch(loadCar(car))
 }
 
 // ---------------------------------------------------------------------
@@ -73,7 +72,7 @@ export const createCar = (newCar) => async(dispatch) => {
   if (imageUrl) formData.append("imageUrl", imageUrl);
   formData.append("description", description, "name", name);
 
-  const res = await fetch('/api/car', {
+  const res = await csrfFetch('/api/car', {
     method: 'POST',
     headers: { "Content-Type": "application/json" },
     body: formData
@@ -104,12 +103,12 @@ export const createCar = (newCar) => async(dispatch) => {
 const initialState = {cars:null, car:null};
 
 const carsReducer = (state = initialState, action) => {
-  let newState;
+  // let newState;
   switch(action.type) {
     case LOAD_CARS:
       return {...state, cars: action.payload.car}
     case LOAD_CAR:
-      return {...state, car: action.payload.car}
+      return {...state, [action.payload.car.id]:action.payload.car}
     case ADD_CAR:
       return {...state, car: action.payload.car}
     default:
