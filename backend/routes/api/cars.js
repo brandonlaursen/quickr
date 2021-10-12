@@ -46,7 +46,7 @@ router.get('/car/:id', asyncHandler(async(req, res) => {
 //WORKING ON ---------------
 
 
-//upload a car(create) TBD Tomorrow
+//upload a car(create) WORKS
 router.post('/', asyncHandler(async(req, res) => {
   const { userId, name, description, imageUrl } = req.body;
 
@@ -61,6 +61,18 @@ router.post('/', asyncHandler(async(req, res) => {
 //WORKING ON ---------------
 
 
+//delete a car(destroy) TBD
+router.delete('/car/:id/delete', asyncHandler(async(req, res) => {
+  const id = parseInt(req.params.id, 10);
+
+  const car = await Car.findByPk(id);
+
+  // const userId = car.userId
+
+  await car.destroy();
+  // const cars = await Car.findAll({ where: { userId } });
+  return res.json({ car })
+}))
 
 
 
@@ -85,18 +97,6 @@ router.put('/car/:id(\\d+)/edit', asyncHandler(async(req, res) => {
 
 
 
-//delete a car(destroy) TBD
-router.delete('/car/:id(\\d+)/delete', asyncHandler(async(req, res) => {
-  const id = parseInt(req.params.id, 10);
-
-  const car = await Car.findByPk(id);
-
-  const userId = car.userId
-
-  await car.destroy();
-  const cars = await Car.findAll({ where: { userId } });
-  return res.json({ cars })
-}))
 
 
 

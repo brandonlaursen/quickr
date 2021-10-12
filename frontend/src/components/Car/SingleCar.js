@@ -4,8 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
 import { restoreUser } from '../../store/session'
 import { useParams } from 'react-router';
+import { NavLink, useHistory  } from 'react-router-dom';
+import { deleteCar } from '../../store/cars';
 
 const Car = () => {
+  const history = useHistory();
   const { carId } = useParams();
   const car = useSelector(state => state.car[carId]);
 
@@ -16,13 +19,23 @@ const Car = () => {
 
   useEffect(() => {
      dispatch(getCar(carId))
-     
+
   },[dispatch])
+
+  const removeCar = (e) => {
+    e.preventDefault();
+
+    dispatch(deleteCar(carId))
+    history.push('/')
+  }
 
   return (
     <div>
       <h1>{car?.name}</h1>
       <img src={car?.imageUrl} alt="car" className='carImage' ></img>
+      <button onClick={removeCar}>Delete</button>
+      <NavLink to="/"> <button>Back to Images</button> </NavLink>
+      <button>Edit</button>
       <p className='carDescription'>{car?.description}</p>
     </div>
   )

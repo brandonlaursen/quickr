@@ -30,7 +30,7 @@ function Upload () {
     };
 
     dispatch(createCar(payload))
-    console.log(car)
+    // console.log(car)
   //  if(car) history.push(`/car/${car.id}`)
    if(car) history.push('/')
   }

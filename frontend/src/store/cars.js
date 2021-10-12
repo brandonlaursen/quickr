@@ -3,7 +3,7 @@ import { csrfFetch } from './csrf';
 const LOAD_CARS = 'cars/loadCars'
 const LOAD_CAR = 'cars/loadCar'
 const ADD_CAR = 'cars/addCar'
-
+const REMOVE_CAR = 'cars/removeCar'
 
 // ---------------------------------------------------------------------
 
@@ -53,7 +53,7 @@ export const getCar = (carId) => async(dispatch) => {
 
 // ---------------------------------------------------------------------
 
-//add a new car IN PROGRESS
+//add a new car WORKS
 const addCar = (car) => {
   return {
     type: ADD_CAR,
@@ -61,26 +61,7 @@ const addCar = (car) => {
   }
 }
 
-// upload a new car
-// export const createCar = (newCar) => async(dispatch) => {
-//   const { userId, name, description, imageUrl } = newCar;
-
-//   const formData = new FormData();
-//   formData.append('userId', userId);
-
-//   if (imageUrl) formData.append("imageUrl", imageUrl);
-//   formData.append("description", description, "name", name);
-
-//   const res = await csrfFetch('/api/cars/', {
-//     method: 'POST',
-//     headers: { "Content-Type": "application/json" },
-//     body: formData
-//   });
-
-//   const data = await res.json();
-//   dispatch(addCar(data));
-// }
-
+// upload a new car WORKS
 export const createCar = (newCar) => async dispatch => {
   const res = await csrfFetch('/api/cars/', {
         method: 'POST',
@@ -97,6 +78,31 @@ export const createCar = (newCar) => async dispatch => {
 
 // ---------------------------------------------------------------------
 
+const removeCar = (carId) => {
+  return {
+    type: REMOVE_CAR,
+    payload: carId,
+  }
+}
+
+export const deleteCar = (carId) => async dispatch => {
+  const res = await csrfFetch(`/api/cars/car/${carId}/delete`, {
+      method: 'DELETE',
+  });
+
+  const car = await res.json();
+  // dispatch(removeCar(car.id))
+  return car;
+
+}
+
+
+
+
+
+
+
+// ---------------------------------------------------------------------
 
 
 
