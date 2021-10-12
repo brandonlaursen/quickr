@@ -77,14 +77,15 @@ export const createCar = (newCar) => async dispatch => {
 }
 
 // ---------------------------------------------------------------------
+//WORKS
+// const removeCar = (carId) => {
+//   return {
+//     type: REMOVE_CAR,
+//     payload: carId,
+//   }
+// }
 
-const removeCar = (carId) => {
-  return {
-    type: REMOVE_CAR,
-    payload: carId,
-  }
-}
-
+//WORKS
 export const deleteCar = (carId) => async dispatch => {
   const res = await csrfFetch(`/api/cars/car/${carId}/delete`, {
       method: 'DELETE',

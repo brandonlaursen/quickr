@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import { createCar } from '../../store/cars';
+import { getUserCars } from '../../store/cars';
 
 function Upload () {
   const history = useHistory();
@@ -29,7 +30,7 @@ function Upload () {
       userId: user.id
     };
 
-    dispatch(createCar(payload))
+    dispatch(createCar(payload)).then(() => dispatch(getUserCars(user.id)))
     // console.log(car)
   //  if(car) history.push(`/car/${car.id}`)
    if(car) history.push('/')
@@ -59,8 +60,8 @@ function Upload () {
           value={imageUrl}
           onChange={updateImageUrl}
          />
-        <button type="submit">Upload Car</button>
-        <button type="button" >Cancel</button>
+       <button type="submit">Upload Car</button>
+       <NavLink to="/"> <button type="button" >Cancel</button> </NavLink>
       </form>
     </section>
   )

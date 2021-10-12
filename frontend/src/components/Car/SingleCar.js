@@ -6,6 +6,7 @@ import { restoreUser } from '../../store/session'
 import { useParams } from 'react-router';
 import { NavLink, useHistory  } from 'react-router-dom';
 import { deleteCar } from '../../store/cars';
+import { getUserCars } from '../../store/cars';
 
 const Car = () => {
   const history = useHistory();
@@ -14,20 +15,22 @@ const Car = () => {
 
 //  const car = cars.find((car) => car.id === carId);
 
-  // const user = useSelector(state => state.session.user)
+  const user = useSelector(state => state.session.user)
+
   const dispatch = useDispatch();
+
+  const removeCar = (e) => {
+    e.preventDefault();
+
+    dispatch(deleteCar(carId)).then(() => dispatch(getUserCars(user.id)))
+    history.push('/')
+  }
 
   useEffect(() => {
      dispatch(getCar(carId))
 
   },[dispatch])
 
-  const removeCar = (e) => {
-    e.preventDefault();
-
-    dispatch(deleteCar(carId))
-    history.push('/')
-  }
 
   return (
     <div>
