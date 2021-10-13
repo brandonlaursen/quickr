@@ -65,7 +65,6 @@ function SignupFormPage() {
               />
             </label>
             <label>
-
               <input
                 className='signUpFormInput'
                 type="password"

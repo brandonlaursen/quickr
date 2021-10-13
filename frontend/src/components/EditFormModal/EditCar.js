@@ -17,7 +17,7 @@ function EditCar () {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
-  const car = useSelector(state => state.car)
+  // const car = useSelector(state => state.car[carId])
   const { carId } = useParams();
 
   const { setShowModal } = useShowModal();
@@ -45,33 +45,39 @@ function EditCar () {
   }
 
   return(
-    <section className='editForm'>
-      <form  onSubmit={editCarImage}>
-        <input
-          type="text"
-          placeholder="Name"
-          required
-          value={name}
-          onChange={updateName}
-           />
-        <input
-          type="text"
-          placeholder="Description"
-          required
-          value={description}
-          onChange={updateDescription}
-           />
-        <input
-          type="text"
-          placeholder="ImageUrl"
-          required
-          value={imageUrl}
-          onChange={updateImageUrl}
-         />
-       <button type="submit">Submit</button>
-       <NavLink to="/"> <button type="button" >Cancel</button> </NavLink>
-      </form>
-    </section>
+    <div className='editFormContainer'>
+      <h3 className='signUpTitle'>Edit Car</h3>
+      <div className='editForm'>
+        <form  onSubmit={editCarImage}>
+          <input
+            className='editNameInput'
+            type="text"
+            placeholder="Name"
+            required
+            value={name}
+            onChange={updateName}
+            />
+          <input
+            className='editDesInput'
+            type="text"
+            placeholder="Description"
+            required
+            value={description}
+            onChange={updateDescription}
+            />
+          <input
+            className='editImageInput'
+            type="text"
+            placeholder="ImageUrl"
+            required
+            value={imageUrl}
+            onChange={updateImageUrl}
+          />
+        <button type="submit" className='editSubmitButton'>Submit</button>
+        <NavLink to="/"> <button type="button" className='editCancelButton'>Cancel</button> </NavLink>
+        </form>
+      </div>
+    </div>
   )
 }
 

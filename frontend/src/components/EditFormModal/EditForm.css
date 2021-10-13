@@ -1,0 +1,95 @@
+.modal-background{
+  /* background-color: black; */
+}
+
+.editFormContainer {
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  bottom: 10rem;
+  color: white;
+  margin-top: 18rem;
+  flex-flow:column;
+  background-color:transparent;
+  width: 30rem;
+  padding-left: 9.9rem;
+}
+
+.editForm {
+  /* margin-right: 23rem; */
+
+}
+
+.editNameInput{
+  outline: 0;
+  background: #f2f2f2;
+  width: 20rem;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 15px;
+  border-radius: .2rem;
+
+}
+
+.editDesInput {
+  outline: 0;
+  background: #f2f2f2;
+  width: 20rem;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 15px;
+  border-radius: .2rem;
+}
+
+.editImageInput{
+  outline: 0;
+  background: #f2f2f2;
+  width: 20rem;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 15px;
+  border-radius: .2rem;
+}
+
+.editSubmitButton{
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 20rem;
+  border: 0;
+  border-radius: .5rem;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.editCancelButton {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 20rem;
+  border: 0;
+  border-radius: .5rem;
+  padding: 15px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
