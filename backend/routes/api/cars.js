@@ -71,14 +71,9 @@ router.delete('/car/:id/delete', asyncHandler(async(req, res) => {
 }))
 
 
-//WORKING ON ---------------
 
 
-
-
-
-
-//edit a car(update) TBD
+//edit a car(update) Works
 router.put('/car/:id/edit', asyncHandler(async(req, res) => {
   const { description, name, imageUrl } = req.body;
 
