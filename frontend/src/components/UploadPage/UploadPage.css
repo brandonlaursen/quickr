@@ -1,4 +1,95 @@
+
+.signUpTitleUpload {
+  margin-left: 7.3rem;
+}
+.uploadContainer{
+  display: flex;
+  position: relative;
+  margin: auto;
+  bottom: 10rem;
+  color: white;
+  margin-top: 18rem;
+  flex-flow:column;
+  background-color:transparent;
+  width: 30rem;
+  /* padding-left: 9.9rem; */
+}
+
+
 .carForm{
-  margin-top: 10rem;
-  margin-left: 20rem;
+  margin-top: 3rem;
+  margin-left: 4rem;
+}
+
+.uploadNameFormInput{
+  outline: 0;
+  background: #f2f2f2;
+  width: 20rem;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 15px;
+  border-radius: .2rem;
+}
+
+.uploadDesFormInput{
+  outline: 0;
+  background: #f2f2f2;
+  width: 20rem;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 15px;
+  border-radius: .2rem;
+}
+
+.uploadImageFormInput{
+  outline: 0;
+  background: #f2f2f2;
+  width: 20rem;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  margin-top: 15px;
+  border-radius: .2rem;
+}
+
+.uploadButton {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 20rem;
+  border: 0;
+  border-radius: .2rem;
+  padding: 13px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.uploadCancel{
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 20rem;
+  border: 0;
+  border-radius: .2rem;
+  padding: 13px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
 }

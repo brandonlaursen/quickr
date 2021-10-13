@@ -7,20 +7,24 @@
 
 .singleCarName{
   color: white;
-  text-align: center;
+  /* text-align: center; */
+  margin-left: 11rem;
 }
 .descriptionContainer {
   border: solid black;
   padding: 1rem;
   background-color: grey;
+  width: 28rem;
 }
 .singleCarDescription {
   color:black;
+  /* width: 5rem; */
 }
 
 .buttonContainer {
   display: flex;
   margin-top: 1rem;
+  margin-left: auto;
 }
 
 .delete{
@@ -38,7 +42,7 @@
   transition: all 0.3 ease;
   cursor: pointer;
   margin-bottom: 1rem;
-  margin-left: 2rem;
+  margin-left: 2.5rem;
 }
 .back {
   text-transform: uppercase;

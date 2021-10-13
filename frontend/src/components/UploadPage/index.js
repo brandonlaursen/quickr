@@ -37,33 +37,39 @@ function Upload () {
   }
 
   return(
-    <section className='carForm'>
-      <form  onSubmit={addCar}>
-        <input
-          type="text"
-          placeholder="Name"
-          required
-          value={name}
-          onChange={updateName}
-           />
-        <input
-          type="text"
-          placeholder="Description"
-          required
-          value={description}
-          onChange={updateDescription}
-           />
-        <input
-          type="text"
-          placeholder="ImageUrl"
-          required
-          value={imageUrl}
-          onChange={updateImageUrl}
-         />
-       <button type="submit">Upload Car</button>
-       <NavLink to="/"> <button type="button" >Cancel</button> </NavLink>
-      </form>
-    </section>
+    <div className='uploadContainer'>
+      <div className='carForm'>
+        <h3 className='signUpTitleUpload'>UPLOAD</h3>
+        <form  onSubmit={addCar}>
+          <input
+            className='uploadNameFormInput'
+            type="text"
+            placeholder="Name"
+            required
+            value={name}
+            onChange={updateName}
+            />
+          <input
+            className='uploadDesFormInput'
+            type="text"
+            placeholder="Description"
+            required
+            value={description}
+            onChange={updateDescription}
+            />
+          <input
+            className='uploadImageFormInput'
+            type="text"
+            placeholder="ImageUrl"
+            required
+            value={imageUrl}
+            onChange={updateImageUrl}
+          />
+        <button type="submit" className='uploadButton'>Upload Car</button>
+        <NavLink to="/"> <button type="button"className='uploadCancel' >Cancel</button> </NavLink>
+        </form>
+      </div>
+    </div>
   )
 }
 

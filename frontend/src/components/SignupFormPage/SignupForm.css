@@ -28,7 +28,7 @@
   width: 20rem;
   border: 0;
   border-radius: .2rem;
-  padding: 10px;
+  padding: 13px;
   color: white;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
@@ -70,4 +70,5 @@
   font-size: 20px;
   color: white;
   margin-left: 7.5rem;
+  margin-top: 3.5rem;
 }
