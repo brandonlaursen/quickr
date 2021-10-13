@@ -126,7 +126,7 @@ router.post("/car/:id/comment", validateComment, asyncHandler(async(req, res) =>
 // ----GET All COMMENT----
 // api/cars/car/:id/comment
 
-router.get('/car/:id', asyncHandler(async(req, res) => {
+router.get('/car/:id/comments', asyncHandler(async(req, res) => {
   const carId = parseInt(req.params.id, 10);
 
   const comments = await Comment.findAll({
@@ -134,7 +134,7 @@ router.get('/car/:id', asyncHandler(async(req, res) => {
       carId
     }
   });
-  return res.json({ comments });
+  return res.json( comments );
 
 }))
 

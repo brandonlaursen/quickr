@@ -9,7 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Car.associate = function(models) {
     Car.belongsTo(models.User, { foreignKey: 'userId' });
-    Car.hasMany(models.Comment, { foreignKey: 'CarId' });
+    Car.hasMany(models.Comment, { foreignKey: 'carId', onDelete: 'CASCADE', hooks: true});
   };
   return Car;
 };

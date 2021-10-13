@@ -5,7 +5,7 @@ import { csrfFetch } from './csrf';
 
 // ----POST A COMMENT----
 
-const POST_COMMENT = 'users/PostComment';
+const POST_COMMENT = 'users/PostComments';
 
 const addComment = (comment) => {
   return {
@@ -17,7 +17,7 @@ const addComment = (comment) => {
 export const createComment = (newComment) => async dispatch => {
   const { userId, carId, comment } = newComment;
 
-  const res = await csrfFetch(`api/cars/car/${carId}/comment`, {
+  const res = await csrfFetch(`/api/cars/car/${carId}/comment`, {
     method: 'POST',
     body: JSON.stringify({
       userId,
@@ -33,7 +33,7 @@ export const createComment = (newComment) => async dispatch => {
   }
 }
 
-// ----GET A COMMENT----
+// ----GET ALL COMMENT----
 const GET_COMMENTS = 'users/getComments';
 
 const allComments = (comment) => {
@@ -44,14 +44,14 @@ const allComments = (comment) => {
 }
 
 export const getAllComments = (carId) => async (dispatch) => {
-  const res = await csrfFetch(`api/cars/${carId}`, {
+  const res = await csrfFetch(`/api/cars/car/${carId}/comments`, {
     method: 'GET'
   });
 
   if(res.ok) {
     const data = await res.json();
     dispatch(allComments(data));
-    return res;
+    // return res;
   }
 }
 
@@ -68,11 +68,11 @@ const commentReducer = (state = initialState, action) => {
   switch(action.type) {
     case GET_COMMENTS:
       newState = Object.assign({}, state);
-      newState= action.comment;
+      newState.comments = action.payload;
       return newState;
     case POST_COMMENT:
       newState = Object.assign({}, state);
-      newState['comments'] = action.comment;
+      newState.comments = action.payload;
       return newState;
     default:
       return state;
