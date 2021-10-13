@@ -108,13 +108,13 @@ const update = (carId) => ({
 });
 
 
-export const editCar = (carId) => async dispatch => {
+export const editCar = (payload, carId) => async dispatch => {
   const res = await csrfFetch(`/api/cars/car/${carId}/edit`, {
     method: 'PUT',
     headers: {
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(carId),
+    body: JSON.stringify(payload),
   });
 
   const car = await res.json();
@@ -157,6 +157,12 @@ const carsReducer = (state = initialState, action) => {
         ...state, list: { ...state.cars, test: action.payload }
       }
       return newState;
+    case EDIT_CAR: {
+      return {
+        ...state,
+        test2: action.payload,
+      };
+    }
     default:
       return state;
   }

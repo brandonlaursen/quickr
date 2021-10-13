@@ -1,17 +1,26 @@
-import './UploadPage.css';
+
+import './EditForm.css';
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { createCar } from '../../store/cars';
+import { editCar } from '../../store/cars';
 import { getUserCars } from '../../store/cars';
+import { getCar } from '../../store/cars';
+import { Redirect, useParams } from 'react-router';
+import { useShowModal } from '../../context/showModal';
 
-function Upload () {
+
+
+function EditCar () {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector(state => state.session.user)
-  const car = useSelector(state => state.car.list)
+  const car = useSelector(state => state.car)
+  const { carId } = useParams();
+
+  const { setShowModal } = useShowModal();
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -21,24 +30,23 @@ function Upload () {
   const updateDescription = (e) => setDescription(e.target.value);
   const updateImageUrl = (e) => setImageUrl(e.target.value);
 
-  const addCar = (e) => {
+  const editCarImage = (e) => {
     e.preventDefault();
     const payload = {
       name,
       description,
       imageUrl,
-      userId: user.id
     };
 
-    dispatch(createCar(payload)).then(() => dispatch(getUserCars(user.id)))
-    // console.log(car)
-  //  if(car) history.push(`/car/${car.id}`)
-   if(car) history.push('/')
+    dispatch(editCar(payload, carId)).then(() => dispatch(getCar(carId)))
+    .then(() => setShowModal(false));
+
+  //  if(car) history.push('/')
   }
 
   return(
-    <section className='carForm'>
-      <form  onSubmit={addCar}>
+    <section className='editForm'>
+      <form  onSubmit={editCarImage}>
         <input
           type="text"
           placeholder="Name"
@@ -60,11 +68,11 @@ function Upload () {
           value={imageUrl}
           onChange={updateImageUrl}
          />
-       <button type="submit">Upload Car</button>
+       <button type="submit">Submit</button>
        <NavLink to="/"> <button type="button" >Cancel</button> </NavLink>
       </form>
     </section>
   )
 }
 
-export default Upload;
+export default EditCar;

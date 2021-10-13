@@ -7,6 +7,7 @@ import { useParams } from 'react-router';
 import { NavLink, useHistory  } from 'react-router-dom';
 import { deleteCar } from '../../store/cars';
 import { getUserCars } from '../../store/cars';
+import EditCarInfo from '../EditFormModal';
 
 const Car = () => {
   const history = useHistory();
@@ -39,7 +40,8 @@ const Car = () => {
       <div className='buttonContainer'>
         <button onClick={removeCar} className='delete'>Delete</button>
         <NavLink to="/"> <button className='back'>Back to Images</button> </NavLink>
-        <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink>
+        <EditCarInfo />
+        {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
       </div>
       <div className='descriptionContainer'>
         <p className='singleCarDescription'>{car?.description}</p>
