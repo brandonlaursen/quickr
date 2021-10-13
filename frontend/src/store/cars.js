@@ -3,8 +3,8 @@ import { csrfFetch } from './csrf';
 const LOAD_CARS = 'cars/loadCars'
 const LOAD_CAR = 'cars/loadCar'
 const ADD_CAR = 'cars/addCar'
-// const REMOVE_CAR = 'cars/removeCar'
 const EDIT_CAR = 'cars/addCar'
+// const REMOVE_CAR = 'cars/removeCar'
 
 // ---------------------------------------------------------------------
 
