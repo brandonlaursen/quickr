@@ -3,11 +3,15 @@ import thunk from "redux-thunk";
 import sessionReducer from './session';
 import carsReducer from "./cars";
 import commentReducer from "./comment";
+import usersReducer from "./users";
+
 
 const rootReducer = combineReducers({
   session: sessionReducer,
   car: carsReducer,
-  comments: commentReducer
+  comments: commentReducer,
+  users: usersReducer
+
 });
 
 let enhancer;

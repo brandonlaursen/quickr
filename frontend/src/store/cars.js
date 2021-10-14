@@ -9,27 +9,27 @@ const EDIT_CAR = 'cars/addCar'
 // ---------------------------------------------------------------------
 
 // get all users
-const LOAD_USERS = 'users/loadUsers'
+// const LOAD_USERS = 'users/loadUsers'
 
-const getUsers = (users, userId) => {
-  return {
-    type: LOAD_USERS,
-    payload: users,
-    userId
-  }
-}
+// const getUsers = (users, userId) => {
+//   return {
+//     type: LOAD_USERS,
+//     payload: users,
+//     userId
+//   }
+// }
 
-export const getAllUsers = () => async(dispatch) => {
-  const res = await fetch(`/api/users/allUsers`, {
-    method: 'GET',
-    headers: {
-            "Content-Type": "application/json",
-          }
-  });
+// export const getAllUsers = () => async(dispatch) => {
+//   const res = await fetch(`/api/users/allUsers`, {
+//     method: 'GET',
+//     headers: {
+//             "Content-Type": "application/json",
+//           }
+//   });
 
-  const users = await res.json();
-  dispatch(getUsers(users));
-}
+//   const users = await res.json();
+//   dispatch(getUsers(users));
+// }
 
 
 
@@ -192,8 +192,6 @@ const carsReducer = (state = initialState, action) => {
         test2: action.payload,
       };
     }
-    case LOAD_USERS:
-      return {...state, users: action.payload.user}
     default:
       return state;
   }

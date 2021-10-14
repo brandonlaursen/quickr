@@ -49,9 +49,9 @@ router.post(
 
 //get all users
 router.get('/allUsers', asyncHandler(async(req, res) => {
-  const users = User.findAll();
+  const users = await User.findAll();
 
-  return res.json({users})
+  return res.json(users)
 }));
 
 

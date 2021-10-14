@@ -116,8 +116,8 @@ const Car = () => {
           <EditCarInfo />
           {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
         </div>
-        {/* <img src={user.profilePicUrl} alt='profile-pic' ></img> */}
         <NavLink to ={`/profile/${car?.User.id}`}  className='uploadedBy'> <h2>Uploaded by: {car?.User.username}</h2> </NavLink>
+        <NavLink to ={`/profile/${car?.User.id}`} ><img src={car?.User.profilePicUrl} alt="car" ></img> </NavLink>
         <div className='descriptionContainer'>
           <p className='singleCarDescription'>{car?.description}</p>
         </div>
