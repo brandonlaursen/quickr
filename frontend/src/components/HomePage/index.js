@@ -14,7 +14,7 @@ function HomePage({ isLoaded }) {
   if (sessionUser) {
     sessionLinks = (
       <div className = 'HOME'>
-        <CarsContainer/>
+        {/* <CarsContainer/> */}
       </div>
     );
   } else {
