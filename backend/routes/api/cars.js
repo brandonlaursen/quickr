@@ -138,10 +138,44 @@ router.get('/car/:id/comments', asyncHandler(async(req, res) => {
 
 }))
 
+// DELETE COMMENT
+// api/cars/car/:carId/comment/:commentId/delete
+
+router.delete('/car/:carId/comment/:commentId/delete', asyncHandler(async(req, res) => {
+  const carId = parseInt(req.params.carId, 10);
+  const commentId = parseInt(req.params.commentId, 10);
+
+  const comment = await Comment.findByPk(commentId);
+
+  await comment.destroy();
+
+  const comments = await Comment.findAll({
+    where: {
+      carId
+    }
+  });
+
+  return res.json(comments)
+}))
 
 
+//EDIT A COMMENT
+router.put('/car/:carId/comment/:commentId/edit', asyncHandler(async(req, res) => {
 
 
+  const carId = parseInt(req.params.carId, 10);
+  const commentId = parseInt(req.params.commentId, 10);
+
+  const oldComment = await Comment.findByPk(commentId);
+  await oldComment.update( req.body );
+  const comments = await Comment.findAll({
+    where: {
+      carId
+    }
+  })
+  return res.json(comments);
+
+}))
 
 
 

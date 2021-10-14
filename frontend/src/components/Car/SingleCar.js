@@ -10,7 +10,7 @@ import { getUserCars } from '../../store/cars';
 import EditCarInfo from '../EditFormModal';
 
 //comment stuff
-import { getAllComments, createComment } from '../../store/comment';
+import { getAllComments, createComment, deleteComment, editComment } from '../../store/comment';
 
 const Car = () => {
   const history = useHistory();
@@ -24,6 +24,8 @@ const Car = () => {
   const comments = useSelector(state => state.comments.comments);
 
   const [newComment, setNewComment] = useState('');
+  const [edit, setEdit] = useState('');
+  const [disabler, setDisabler] = useState(false);
 
   useEffect(() => {
     dispatch(getAllComments(carId));
@@ -41,10 +43,48 @@ const Car = () => {
     await dispatch(createComment(postComment)).then(setNewComment(''));
   }
 
+  const deleteAComment = async(e, commentId) => {
+    e.preventDefault();
+    await dispatch(deleteComment(carId, commentId))
 
+  }
+
+  const editAComment = async (e, comment, commentId, carId) => {
+    e.preventDefault();
+    const payload = {
+      comment
+    }
+
+    dispatch(editComment(payload, commentId, carId)).then(() => dispatch(getAllComments(carId)));
+  }
+
+  const hideComment = (commentId) => {
+    const comment1 = document.querySelector(`.comment${commentId}`);
+    const input = document.querySelector(`.input${commentId}`);
+    if(comment1.classList.contains("hidden")) {
+      comment1.classList.remove('hidden');
+      input.classList.add('hidden');
+
+    } else {
+      comment1.classList.add("hidden");
+      input.classList.remove('hidden');
+      setDisabler(true)
+    }
+  }
 //  const car = cars.find((car) => car.id === carId);
 
+  const submitEdit = (commentId) => {
+    const comment1 = document.querySelector(`.comment${commentId}`);
+    const input = document.querySelector(`.input${commentId}`);
 
+    const payload = {
+      comment: edit
+    };
+    dispatch(editComment(payload, commentId, +carId)).then(() => dispatch(getAllComments(carId)));
+    comment1.classList.remove('hidden');
+    input.classList.add('hidden');
+    setDisabler(false)
+  }
 
   const removeCar = (e) => {
     e.preventDefault();
@@ -88,19 +128,34 @@ const Car = () => {
             comments?.map((comment) => {
        return <div className={`commentBox ${comment.id}`} id={comment.id} key={comment.id}>
                 <div className='allCommentsContainer'>
-                  <textarea
-                    disabled={true}
-                    className='comments'
-                    value={comment.comment}
+                  <div
+
+                    // disabled={true}
+                    className={`comment${comment.id}`}
+                    // value={comment.comment}
                   >
-                  </textarea>
+                  {comment.comment}
+                  </div>
+                  <div className={`hidden input${comment.id}`}>
+                  <textarea
+                    className='editCommentInput'
+                    onChange={(e) => setEdit(e.target.value)}
+                    value={edit}
+                  />
+                  <button onClick={() => submitEdit(comment.id)}>Submit Changes</button>
+
+                  </div>
                 </div>
+            {comment.userId === user?.id && (
+              <div>
+                <button className='deleteCommentButton' onClick={(e) => deleteAComment(e, comment.id)} >Delete</button>
+                <button className='editCommentButton' onClick={(e) => hideComment( comment.id )} onMouseDown={() =>  setEdit(comment.comment)} disabled={disabler}>Edit</button>
+              </div>
+            )}
 
               </div>
             })
-
           }
-
         </div>
       </div>
     </div>

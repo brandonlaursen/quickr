@@ -55,8 +55,53 @@ export const getAllComments = (carId) => async (dispatch) => {
   }
 }
 
+// ----DELETE COMMENT----
+// const DEL_COMMENTS = 'users/delComments';
+
+// const deleteAComment = (comment) => {
+//   return {
+//     type: DEL_COMMENTS,
+//     payload: comment
+//   }
+// }
+
+export const deleteComment = (carId, commentId) => async(dispatch) => {
+  const res = await csrfFetch(`/api/cars/car/${carId}/comment/${commentId}/delete`, {
+    method: 'DELETE'
+  });
+
+  if(res.ok) {
+    const data = await res.json();
+    dispatch(allComments(data));
+    return res;
+  }
+}
 
 
+// ----EDIT COMMENT----
+const EDIT_COMMENT = 'users/editComment';
+
+const editAComment = (comment) => {
+  return {
+    type: EDIT_COMMENT,
+    payload: comment
+  }
+}
+
+
+export const editComment = (payload, commentId, carId,) => async(dispatch) => {
+  const res = await csrfFetch(`/api/cars/car/${carId}/comment/${commentId}/edit`, {
+    method: 'PUT',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(payload),
+  });
+
+  const comment = await res.json();
+  dispatch(editAComment(comment));
+  return comment;
+}
 
 
 //trying a different way to apporach reducers
@@ -71,6 +116,10 @@ const commentReducer = (state = initialState, action) => {
       newState.comments = action.payload;
       return newState;
     case POST_COMMENT:
+      newState = Object.assign({}, state);
+      newState.comments = action.payload;
+      return newState;
+    case EDIT_COMMENT:
       newState = Object.assign({}, state);
       newState.comments = action.payload;
       return newState;

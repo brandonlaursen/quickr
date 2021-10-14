@@ -78,3 +78,6 @@
   margin-bottom: 1rem;
   margin-left: 4rem;
 }
+.hidden {
+  display: none;
+}
