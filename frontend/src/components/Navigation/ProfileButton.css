@@ -1,8 +1,10 @@
 .userButton {
   width: 3rem;
   height: 2.13rem;
-
 }
+.black-color {
+  color: black;
+  }
 
 .profile-dropdown {
   position: absolute;
