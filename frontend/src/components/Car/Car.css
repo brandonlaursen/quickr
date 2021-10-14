@@ -1,5 +1,6 @@
 .singleCarBackground {
   /* position: absolute; */
+  /* position: fixed; */
   background-color: rgb(37, 37, 37);
   margin-top: 0rem;
   height: 33.5rem;
@@ -9,6 +10,17 @@
   top: 0;
   z-index: -10;
 
+}
+.singleCarBackgroundBottom{
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  /* margin-top: 10rem; */
+  height: 100%;
+  width: 100%;
+  margin-left: 0;
+  left: 0;
+  top: 0;
+  z-index: -10;
 }
 .singleCarComponent {
   position: absolute;
@@ -99,16 +111,6 @@
   width: 35rem; */
 }
 
-.singleCarBackgroundBottom{
-  position: fixed;
-  background-color: rgb(255, 255, 255);
-  /* margin-top: 10rem; */
-  height: 100%;
-  width: 100%;
-  left: 0;
-  top: 0;
-  z-index: -10;
-}
 
 .commentInput {
   margin-top: 1rem;

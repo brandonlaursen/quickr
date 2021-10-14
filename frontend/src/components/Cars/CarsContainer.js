@@ -25,17 +25,21 @@ const CarsContainer = () => {
   },[dispatch])
 
   return (
-    <div className='carImageContainer'>
-      <NavLink to="/upload" className='Upload'>Upload an image</NavLink>
-      <div className='carImages'>
-        {cars && cars.map((car) =>
-        <div className='column'>
-          {/* <h1 className='carName'>{car.name}</h1> */}
-          {/* <img src={car.imageUrl} alt="car" className='carImage'></img> */}
-          <NavLink to={`/car/${car.id}`}><img src={car.imageUrl} alt="car" className='carImage' ></img></NavLink>
-          {/* <p className='carDescription'>{car.description}</p> */}
+    <div>
+      <div className='singleCarBackground2'> </div>
+      <div className='singleCarBackgroundBottom2'></div>
+      <div className='carImageContainer'>
+        <NavLink to="/upload" className='Upload'>Upload an image</NavLink>
+        <div className='carImages'>
+          {cars && cars.map((car) =>
+          <div className='column'>
+            {/* <h1 className='carName'>{car.name}</h1> */}
+            {/* <img src={car.imageUrl} alt="car" className='carImage'></img> */}
+            <NavLink to={`/car/${car.id}`}><img src={car.imageUrl} alt="car" className='carImage' ></img></NavLink>
+            {/* <p className='carDescription'>{car.description}</p> */}
+          </div>
+          )}
         </div>
-        )}
       </div>
     </div>
   )
