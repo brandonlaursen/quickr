@@ -19,6 +19,9 @@ const Car = () => {
   const { carId } = useParams();
   const car = useSelector(state => state.car[carId]);
 
+
+  // const userOwner = useSelector((state) => state.user.user);
+
   //comment stuff
   const user = useSelector(state => state.session.user)
   const comments = useSelector(state => state.comments.comments);
@@ -114,7 +117,7 @@ const Car = () => {
           {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
         </div>
         {/* <img src={user.profilePicUrl} alt='profile-pic' ></img> */}
-        <h2>Uploaded by: {user.username}</h2>
+        <h2>Uploaded by: {car?.User.username}</h2>
         <div className='descriptionContainer'>
           <p className='singleCarDescription'>{car?.description}</p>
         </div>
@@ -140,7 +143,7 @@ const Car = () => {
                       className={`comment${comment.id}`}
                       // value={comment.comment}
                     >
-                    <h3>{user.username}</h3>
+                    <h3>{comment.User?.username}</h3>
                     {comment.comment}
                     </div>
                     <div className={`hidden input${comment.id}`}>

@@ -2,7 +2,7 @@ const express = require("express");
 const asyncHandler = require("express-async-handler");
 const { handleValidationErrors } = require('../../utils/validation');
 const { check, validationResult } = require('express-validator');
-const { Car, Comment } = require("../../db/models");
+const { Car, Comment, User } = require("../../db/models");
 
 const router = express.Router();
 
@@ -41,7 +41,7 @@ router.get('/car/:id', asyncHandler(async(req, res) => {
 
   const id = parseInt(req.params.id, 10);
 
-  const car = await Car.findByPk(id)
+  const car = await Car.findByPk(id, {include: User})
   return res.json({ car })
 }))
 
@@ -114,7 +114,8 @@ router.post("/car/:id/comment", validateComment, asyncHandler(async(req, res) =>
   if(validationErrors.isEmpty()) {
     await newComment.save();
     const comments = await Comment.findAll({
-      where: { carId }
+      where: { carId },
+      include: User
     });
     return res.json(comments);
   } else {
@@ -132,9 +133,10 @@ router.get('/car/:id/comments', asyncHandler(async(req, res) => {
 
   const comments = await Comment.findAll({
     where: {
-      carId
+      carId,
     },
-    order: [Task, Project, 'createdAt', 'DESC']
+    order: [['createdAt', 'DESC']],
+    include: User
   });
   return res.json( comments );
 
@@ -154,7 +156,8 @@ router.delete('/car/:carId/comment/:commentId/delete', asyncHandler(async(req, r
   const comments = await Comment.findAll({
     where: {
       carId
-    }
+    },
+    include: User
   });
 
   return res.json(comments)
