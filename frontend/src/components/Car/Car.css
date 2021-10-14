@@ -225,3 +225,13 @@
   cursor: pointer;
   /* padding: 1rem; */
 }
+
+.uploadedBy{
+  text-decoration: none;
+  color: black
+}
+
+.profileCommentName{
+  text-decoration: none;
+  color: black
+}
