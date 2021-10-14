@@ -21,7 +21,8 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10);
 
   const car = await Car.findAll({
-      where: { userId }
+      where: { userId },
+
   })
   return res.json({ car })
 }));
@@ -132,7 +133,8 @@ router.get('/car/:id/comments', asyncHandler(async(req, res) => {
   const comments = await Comment.findAll({
     where: {
       carId
-    }
+    },
+    order: [Task, Project, 'createdAt', 'DESC']
   });
   return res.json( comments );
 

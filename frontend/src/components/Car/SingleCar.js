@@ -103,65 +103,67 @@ const Car = () => {
     <div>
     <div className='singleCarBackground'> </div>
     <div className='singleCarBackgroundBottom'></div>
-    <div className='singleCarComponent'>
-      <h1 className='singleCarName'>{car?.name}</h1>
-      <img src={car?.imageUrl} alt="car" className='carImage' ></img>
-      <div className='buttonContainer'>
-        <button onClick={removeCar} className='delete'>Delete</button>
-        <NavLink to="/"> <button className='back'>Back to Images</button> </NavLink>
-        <EditCarInfo />
-        {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
-      </div>
-      {/* <img src={user.profilePicUrl} alt='profile-pic' ></img> */}
-      <h2>Uploaded by: {user.username}</h2>
-      <div className='descriptionContainer'>
-        <p className='singleCarDescription'>{car?.description}</p>
-      </div>
-      <div className='addCommentContainer'>
-        <div className='addCommentBox'>
+    <div className='carContainer2'>
+      <div className='singleCarComponent'>
+        <h1 className='singleCarName'>{car?.name}</h1>
+        <img src={car?.imageUrl} alt="car" className='carImage' ></img>
+        <div className='buttonContainer'>
+          <button onClick={removeCar} className='delete'>Delete</button>
+          <NavLink to="/"> <button className='back'>Back to Images</button> </NavLink>
+          <EditCarInfo />
+          {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
+        </div>
+        {/* <img src={user.profilePicUrl} alt='profile-pic' ></img> */}
+        <h2>Uploaded by: {user.username}</h2>
+        <div className='descriptionContainer'>
+          <p className='singleCarDescription'>{car?.description}</p>
+        </div>
+        <div className='addCommentContainer'>
+          <div className='addCommentBox'>
 
-          <form className='addCommentForm' onSubmit={submitComment}>
-            <input className='commentInput' placeholder='Leave a comment' value={newComment}
-              onChange={(e) => setNewComment(e.target.value)}
-              required
-            >
-            </input>
-            <button className='addCommentSubmit' type='submit'>Comment</button>
-          </form>
-          <h2>Comments</h2>
-          {
-            comments?.map((comment) => {
-       return <div className={`commentBox ${comment.id}`} id={comment.id} key={comment.id}>
-                <div className='allCommentsContainer'>
-                  <div
+            <form className='addCommentForm' onSubmit={submitComment}>
+              <input className='commentInput' placeholder='Leave a comment' value={newComment}
+                onChange={(e) => setNewComment(e.target.value)}
+                required
+              >
+              </input>
+              <button className='addCommentSubmit' type='submit'>Comment</button>
+            </form>
+            <h2>Comments</h2>
+            {
+              comments?.map((comment) => {
+        return <div className={`commentBox ${comment.id}`} id={comment.id} key={comment.id}>
+                  <div className='allCommentsContainer'>
+                    <div
 
-                    // disabled={true}
-                    className={`comment${comment.id}`}
-                    // value={comment.comment}
-                  >
-                  <h3>{user.username}</h3>
-                  {comment.comment}
+                      // disabled={true}
+                      className={`comment${comment.id}`}
+                      // value={comment.comment}
+                    >
+                    <h3>{user.username}</h3>
+                    {comment.comment}
+                    </div>
+                    <div className={`hidden input${comment.id}`}>
+                    <textarea
+                      className='editCommentInput'
+                      onChange={(e) => setEdit(e.target.value)}
+                      value={edit}
+                    />
+                    <button className= 'submitEditButton'onClick={() => submitEdit(comment.id)}>Submit Changes</button>
+
+                    </div>
                   </div>
-                  <div className={`hidden input${comment.id}`}>
-                  <textarea
-                    className='editCommentInput'
-                    onChange={(e) => setEdit(e.target.value)}
-                    value={edit}
-                  />
-                  <button className= 'submitEditButton'onClick={() => submitEdit(comment.id)}>Submit Changes</button>
-
-                  </div>
+              {comment.userId === user?.id && (
+                <div>
+                  <button className='deleteCommentButton' onClick={(e) => deleteAComment(e, comment.id)} >Delete</button>
+                  <button className='editCommentButton' onClick={(e) => hideComment( comment.id )} onMouseDown={() =>  setEdit(comment.comment)} disabled={disabler}>Edit</button>
                 </div>
-            {comment.userId === user?.id && (
-              <div>
-                <button className='deleteCommentButton' onClick={(e) => deleteAComment(e, comment.id)} >Delete</button>
-                <button className='editCommentButton' onClick={(e) => hideComment( comment.id )} onMouseDown={() =>  setEdit(comment.comment)} disabled={disabler}>Edit</button>
-              </div>
-            )}
+              )}
 
-              </div>
-            })
-          }
+                </div>
+              })
+            }
+          </div>
         </div>
       </div>
     </div>

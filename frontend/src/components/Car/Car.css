@@ -25,9 +25,18 @@
 .singleCarComponent {
   position: absolute;
   top:7%;
+  justify-content: center;
   left:35.5%;
   right: 35.5%;
 }
+
+/* .carContainer2{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left:35.5%;
+  right: 35.5%; */
 
 .singleCarName{
   color: white;
@@ -48,7 +57,7 @@
 .buttonContainer {
   display: flex;
   margin-top: 1rem;
-  margin-left: auto;
+  /* margin-left: auto; */
 }
 
 .delete{
@@ -109,6 +118,8 @@
 .carImage {
   /* height: 25rem;
   width: 35rem; */
+  /* margin: auto; */
+  /* margin-right: 200rem; */
 }
 
 
