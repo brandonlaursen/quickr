@@ -22,7 +22,7 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
 
   const car = await Car.findAll({
       where: { userId },
-
+      include: User
   })
   return res.json({ car })
 }));

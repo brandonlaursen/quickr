@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useEffect, useState } from "react";
 import { restoreUser } from '../../store/session';
 import { NavLink } from 'react-router-dom';
-import { getCar } from '../../store/cars';
+import { getCar, getAllUsers } from '../../store/cars';
 import { useParams } from 'react-router';
 
 
@@ -18,6 +18,7 @@ const CarsContainer = () => {
 
   const car = useSelector(state => state.car[carId]); //*
 
+  // const user2 = useSelector(state => state.users.userId)
   //working on this
   // const car = useSelector(state => state.car.cars);
 
@@ -26,6 +27,8 @@ const CarsContainer = () => {
   useEffect(() => {
     dispatch(getUserCars(userId))
     dispatch(restoreUser())
+    dispatch(getAllUsers())
+
     //working on this
     // dispatch(restoreUser()).then(() => dispatch(getCar(car.id)));
 
@@ -35,7 +38,7 @@ const CarsContainer = () => {
     <div>
       <div className='singleCarBackground2'> </div>
       <div className='singleCarBackgroundBottom2'></div>
-        <h2>test {car?.User.username} test</h2>
+        {/* <h2>test {user?.username} test</h2> */}
       <div className='carImageContainer'>
         {user?.id === +userId &&
           (
