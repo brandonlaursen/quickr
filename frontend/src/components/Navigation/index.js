@@ -10,7 +10,10 @@ function Navigation({ isLoaded }){
   let sessionLinks;
   if (sessionUser) {
     sessionLinks = (
-      <ProfileButton user={sessionUser} />
+      <>
+        <ProfileButton user={sessionUser} />
+        <button className= 'userButton'><NavLink to="/upload"> <i class="fa fa-upload black-color " ></i></NavLink></button>
+      </>
     );
   } else {
     sessionLinks = (
