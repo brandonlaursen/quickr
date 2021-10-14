@@ -117,7 +117,7 @@ const Car = () => {
           {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
         </div>
         {/* <img src={user.profilePicUrl} alt='profile-pic' ></img> */}
-        <h2>Uploaded by: {car?.User.username}</h2>
+        <NavLink to ={`/profile/${car?.User.id}`} > <h2>Uploaded by: {car?.User.username}</h2> </NavLink>
         <div className='descriptionContainer'>
           <p className='singleCarDescription'>{car?.description}</p>
         </div>
@@ -143,7 +143,7 @@ const Car = () => {
                       className={`comment${comment.id}`}
                       // value={comment.comment}
                     >
-                    <h3>{comment.User?.username}</h3>
+                    <NavLink to ={`/profile/${comment.User?.id}`} ><h3>{comment.User?.username}</h3> </NavLink>
                     {comment.comment}
                     </div>
                     <div className={`hidden input${comment.id}`}>

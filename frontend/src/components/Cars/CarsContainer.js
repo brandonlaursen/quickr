@@ -5,20 +5,27 @@ import { useEffect, useState } from "react";
 import { restoreUser } from '../../store/session';
 import { NavLink } from 'react-router-dom';
 import { getCar } from '../../store/cars';
+import { useParams } from 'react-router';
+
 
 const CarsContainer = () => {
+  const { userId } = useParams();
+
+  const { carId } = useParams(); //*
   const cars = useSelector(state => state.car.cars);
 
   const user = useSelector(state => state.session.user)
-  
+
+  const car = useSelector(state => state.car[carId]); //*
+
   //working on this
   // const car = useSelector(state => state.car.cars);
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(restoreUser()).then(() => dispatch(getUserCars(user.id)));
-
+    dispatch(getUserCars(userId))
+    dispatch(restoreUser())
     //working on this
     // dispatch(restoreUser()).then(() => dispatch(getCar(car.id)));
 
@@ -28,8 +35,12 @@ const CarsContainer = () => {
     <div>
       <div className='singleCarBackground2'> </div>
       <div className='singleCarBackgroundBottom2'></div>
+        <h2>test {car?.User.username} test</h2>
       <div className='carImageContainer'>
-        <NavLink to="/upload" className='Upload'>Upload an image</NavLink>
+        {user?.id === +userId &&
+          (
+          <NavLink to="/upload" className='Upload'>Upload an image</NavLink> )
+        }
         <div className='carImages'>
           {cars && cars.map((car) =>
           <div className='column'>
@@ -46,3 +57,6 @@ const CarsContainer = () => {
 }
 
 export default CarsContainer;
+
+
+//<NavLink to={`/profile/${user.id}`} >

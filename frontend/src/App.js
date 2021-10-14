@@ -10,7 +10,9 @@ import HomePage from "./components/HomePage";
 import LoginFormPage from './components/LoginFormPage';
 import UploadPage from './components/UploadPage'
 import Car from "./components/Car/SingleCar";
-import Edit from './components/Edit/EditForm'
+import Edit from './components/Edit/EditForm';
+import Profile from "./components/Profile/profile";
+
 function App() {
   const dispatch = useDispatch();
   const [isLoaded, setIsLoaded] = useState(false);
@@ -40,6 +42,9 @@ function App() {
           </Route>
           <Route path="/car/:carId/edit">
             <Edit />
+          </Route>
+          <Route path='/profile/:userId'>
+            <Profile />
           </Route>
           <Route>
             Page Not Found
