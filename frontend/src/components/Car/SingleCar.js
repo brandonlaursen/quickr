@@ -116,8 +116,10 @@ const Car = () => {
           <EditCarInfo />
           {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
         </div>
-        <NavLink to ={`/profile/${car?.User.id}`}  className='uploadedBy'> <h2>Uploaded by: {car?.User.username}</h2> </NavLink>
-        <NavLink to ={`/profile/${car?.User.id}`} ><img src={car?.User.profilePicUrl} alt="car" ></img> </NavLink>
+        <div className='postedByContainer'>
+          <NavLink to ={`/profile/${car?.User.id}`} ><img src={car?.User.profilePicUrl} alt="car" className='profilePicComment'></img> </NavLink>
+          <NavLink to ={`/profile/${car?.User.id}`}  className='uploadedBy'> <h3>Uploaded by: {car?.User.username}</h3> </NavLink>
+        </div>
         <div className='descriptionContainer'>
           <p className='singleCarDescription'>{car?.description}</p>
         </div>
@@ -132,7 +134,7 @@ const Car = () => {
               </input>
               <button className='addCommentSubmit' type='submit'>Comment</button>
             </form>
-            <h2>Comments</h2>
+            <h2 className='commentsTitle'>Comments</h2>
             {
               comments?.map((comment) => {
         return <div className={`commentBox ${comment.id}`} id={comment.id} key={comment.id}>
@@ -143,8 +145,12 @@ const Car = () => {
                       className={`comment${comment.id}`}
                       // value={comment.comment}
                     >
+                  <div className='COMMENT'>
+                    {/* <NavLink to ={`/profile/${comment.User?.id}`} ><img src={comment.User?.profilePicUrl} alt="car" className='userCommentProfilePic'></img> </NavLink> */}
                     <NavLink to ={`/profile/${comment.User?.id}`} className='profileCommentName'><h3>{comment.User?.username}</h3> </NavLink>
                     {comment.comment}
+                  </div>
+
                     </div>
                     <div className={`hidden input${comment.id}`}>
                     <textarea

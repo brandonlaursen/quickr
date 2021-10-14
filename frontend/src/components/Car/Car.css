@@ -41,7 +41,7 @@
 .singleCarName{
   color: white;
   text-align: center;
-  /* margin-left: 13rem; */
+  margin-left: 3rem;
 }
 .descriptionContainer {
   border: solid black;
@@ -52,6 +52,7 @@
 .singleCarDescription {
   color:black;
   /* width: 5rem; */
+  /* margin-top: 1rem; */
 }
 
 .buttonContainer {
@@ -234,4 +235,42 @@
 .profileCommentName{
   text-decoration: none;
   color: black;
+}
+
+
+/* =========== */
+.userCommentProfilePic{
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  /* margin-bottom: 12rem; */
+  /* margin-right: 100rem; */
+}
+.profilePicComment {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profilePicComment {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+
+
+.postedByContainer{
+  /* position: absolute; */
+  justify-content: center;
+  display: inline-flex;
+  margin-top: 1rem;
+}
+
+.uploadedBy{
+  text-decoration: none;
+  color: black;
+  margin-top: 1rem;
 }
