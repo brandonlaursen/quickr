@@ -1,19 +1,31 @@
+.singleCarBackground {
+  /* position: absolute; */
+  background-color: rgb(37, 37, 37);
+  margin-top: 0rem;
+  height: 33.5rem;
+  width: 100%;
+  margin-left: 0;
+  left: 0;
+  top: 0;
+  z-index: -10;
+
+}
 .singleCarComponent {
   position: absolute;
-  top:15%;
+  top:7%;
   left:35.5%;
   right: 35.5%;
 }
 
 .singleCarName{
   color: white;
-  /* text-align: center; */
-  margin-left: 11rem;
+  text-align: center;
+  /* margin-left: 13rem; */
 }
 .descriptionContainer {
   border: solid black;
   padding: 1rem;
-  background-color: grey;
+  /* background-color: grey; */
   width: 28rem;
 }
 .singleCarDescription {
@@ -35,7 +47,7 @@
   width: 6em;
   border: 0;
   border-radius: .5rem;
-  padding: 15px;
+  padding: 12px;
   color: white;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
@@ -52,7 +64,7 @@
   width: 100%;
   border: 0;
   border-radius: .5rem;
-  padding: 15px;
+  padding: 12px;
   color: white;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
@@ -69,7 +81,7 @@
   width: 5rem;
   border: 0;
   border-radius: .5rem;
-  padding: 15px;
+  padding: 12px;
   color: white;
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
@@ -80,4 +92,123 @@
 }
 .hidden {
   display: none;
+}
+
+.carImage {
+  /* height: 25rem;
+  width: 35rem; */
+}
+
+.singleCarBackgroundBottom{
+  position: fixed;
+  background-color: rgb(255, 255, 255);
+  /* margin-top: 10rem; */
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: -10;
+}
+
+.commentInput {
+  margin-top: 1rem;
+  width: 29.9rem;
+  height: 5rem;
+}
+
+.addCommentSubmit {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 7rem;
+  border: 0;
+  border-radius: .2rem;
+  padding: 8px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  margin-left: 23.4rem;
+  margin-top: .5rem;
+
+}
+
+.editCommentInput {
+  width: 29.9rem;
+  height: 5rem;
+}
+
+.allCommentsContainer{
+  width: 29.9rem;
+  height: 5rem;
+  /* border: solid black; */
+  margin-top: 5rem;
+  align-items: center;
+}
+
+
+/* .commentButtonContainer{
+  align-items: center;
+  justify-content: center;
+} */
+.deleteCommentButton {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 7rem;
+  border: 0;
+  border-radius: .2rem;
+  padding: 8px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  margin-top: 1rem;
+  position: absolute;
+  left: 22rem;
+
+}
+
+.editCommentButton {
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 7rem;
+  border: 0;
+  border-radius: .2rem;
+  padding: 8px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  position: absolute;
+  left: 14rem;
+  margin-top: 1rem;
+
+}
+
+.submitEditButton{
+  margin-top: .4rem;
+  margin-left: 1rem;
+  text-transform: uppercase;
+  outline: 0;
+  background-color: #328f8a;
+  background-image: linear-gradient(45deg,grey,red);
+  width: 11rem;
+  border: 0;
+  border-radius: .2rem;
+  padding: 7.6px;
+  color: white;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  /* padding: 1rem; */
 }

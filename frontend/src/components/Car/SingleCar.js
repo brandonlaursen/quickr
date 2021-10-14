@@ -100,6 +100,9 @@ const Car = () => {
 
 
   return (
+    <div>
+    <div className='singleCarBackground'> </div>
+    <div className='singleCarBackgroundBottom'></div>
     <div className='singleCarComponent'>
       <h1 className='singleCarName'>{car?.name}</h1>
       <img src={car?.imageUrl} alt="car" className='carImage' ></img>
@@ -109,6 +112,8 @@ const Car = () => {
         <EditCarInfo />
         {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
       </div>
+      {/* <img src={user.profilePicUrl} alt='profile-pic' ></img> */}
+      <h2>Uploaded by: {user.username}</h2>
       <div className='descriptionContainer'>
         <p className='singleCarDescription'>{car?.description}</p>
       </div>
@@ -116,14 +121,14 @@ const Car = () => {
         <div className='addCommentBox'>
 
           <form className='addCommentForm' onSubmit={submitComment}>
-            <textarea className='commentInput' placeholder='Leave a comment' value={newComment}
+            <input className='commentInput' placeholder='Leave a comment' value={newComment}
               onChange={(e) => setNewComment(e.target.value)}
               required
             >
-            </textarea>
+            </input>
             <button className='addCommentSubmit' type='submit'>Comment</button>
           </form>
-          {()=> console.log(comments)}
+          <h2>Comments</h2>
           {
             comments?.map((comment) => {
        return <div className={`commentBox ${comment.id}`} id={comment.id} key={comment.id}>
@@ -134,6 +139,7 @@ const Car = () => {
                     className={`comment${comment.id}`}
                     // value={comment.comment}
                   >
+                  <h3>{user.username}</h3>
                   {comment.comment}
                   </div>
                   <div className={`hidden input${comment.id}`}>
@@ -142,7 +148,7 @@ const Car = () => {
                     onChange={(e) => setEdit(e.target.value)}
                     value={edit}
                   />
-                  <button onClick={() => submitEdit(comment.id)}>Submit Changes</button>
+                  <button className= 'submitEditButton'onClick={() => submitEdit(comment.id)}>Submit Changes</button>
 
                   </div>
                 </div>
@@ -159,6 +165,7 @@ const Car = () => {
         </div>
       </div>
     </div>
+  </div>
   )
 }
 
