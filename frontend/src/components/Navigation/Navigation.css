@@ -109,15 +109,44 @@
   .search-input {
     display: none;
   }
+  .searchResultsContainer {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 1450px) {
   .search-input {
     width: 40rem;
   }
-}
 
+}
 
 .home {
   z-index: 100;
+}
+
+.searchResultsContainer{
+  position: absolute;
+  top: 80%;
+  margin-left: 7.5rem;;
+  background: white;
+  width: 43.5rem;
+  border-radius: .2rem;
+  text-decoration: none;
+  z-index: 1000;
+}
+
+.results {
+  text-decoration: none;
+}
+.searchResultsContainer a, .searchResultsContainer li{
+  list-style-type: none;
+  padding: .5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: black;
+}
+
+.resUl{
+  text-decoration: none;
 }

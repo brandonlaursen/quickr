@@ -1,10 +1,9 @@
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import Footer from '../Footer/Footer';
-import styles from './Search.css'
 
-
+import { findAllCars } from '../../store/search';
+import './Search.css';
 
 
 function SearchPage() {
