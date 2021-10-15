@@ -12,6 +12,7 @@ import UploadPage from './components/UploadPage'
 import Car from "./components/Car/SingleCar";
 import Edit from './components/Edit/EditForm';
 import Profile from "./components/Profile/profile";
+import SearchPage from "./components/Search/Search";
 
 function App() {
   const dispatch = useDispatch();
@@ -45,6 +46,9 @@ function App() {
           </Route>
           <Route path='/profile/:userId'>
             <Profile />
+          </Route>
+          <Route path='/search'>
+            <SearchPage />
           </Route>
           <Route>
             Page Not Found

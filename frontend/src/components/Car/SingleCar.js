@@ -31,9 +31,10 @@ const Car = () => {
   const [disabler, setDisabler] = useState(false);
 
   useEffect(() => {
+    dispatch(getCar(carId))
     dispatch(getAllComments(carId));
 
-  },[dispatch])
+  },[dispatch, carId])
 
   const submitComment = async(e) => {
     e.preventDefault();
@@ -46,11 +47,13 @@ const Car = () => {
     await dispatch(createComment(postComment)).then(setNewComment(''));
   }
 
+
   const deleteAComment = async(e, commentId) => {
     e.preventDefault();
     await dispatch(deleteComment(carId, commentId))
 
   }
+
 
   const editAComment = async (e, comment, commentId, carId) => {
     e.preventDefault();
@@ -96,10 +99,6 @@ const Car = () => {
     history.push('/')
   }
 
-  useEffect(() => {
-     dispatch(getCar(carId))
-
-  },[dispatch])
 
 
   return (
