@@ -39,9 +39,11 @@ const CarsContainer = () => {
     <div>
       <div className='singleCarBackground2'> </div>
       <div className='singleCarBackgroundBottom2'></div>
-        <h2>test {users[userId]?.username} test</h2>
-        <h2>test {users[userId]?.description} test</h2>
-        <img src={users[userId]?.profilePicUrl} alt="car" ></img>
+      <div className='userProfileInfoContainer'>
+        <img src={users[userId]?.profilePicUrl} alt="car"  className='profileHomePic'></img>
+        <h1 className='homeprofilename'>Hello, {users[userId]?.username} </h1>
+        {/* <h2> {users[userId]?.description}</h2> */}
+      </div>
       <div className='carImageContainer'>
         {user?.id === +userId &&
           (

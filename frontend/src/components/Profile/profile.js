@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import { NavLink, Redirect } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import Footer from '../Footer/Footer';
-// import './HomePage.css'
+// import './profile.css'
 import CarsContainer from '../Cars/CarsContainer';
 import Car from '../Car/SingleCar'
 import SignupFormPage from '../SignupFormPage';

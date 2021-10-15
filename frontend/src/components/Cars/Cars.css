@@ -3,7 +3,7 @@
   /* width: 30rem; */
   /* margin-left: 36.3rem; */
   /* background-color: white; */
-  /* margin-top: 8rem; */
+  margin-top: 4rem;
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
@@ -95,4 +95,28 @@
   left: 0;
   top: 0;
   z-index: -10;
+}
+
+.profileHomePic{
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.userProfileInfoContainer{
+  position: absolute;
+  justify-content: center;
+  display: inline-flex;
+  margin-top: -6rem;
+  justify-content: space-between;
+  align-items: center;
+  width: 40rem;
+  left: 30%;
+  color: white;
+}
+
+.homeprofilename {
+
+  margin-top: -2rem;
+  margin-right: 10rem;
 }
