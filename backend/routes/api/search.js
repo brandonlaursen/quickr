@@ -6,9 +6,9 @@ const { Op } = require("sequelize");
 
 const router = express.Router();
 
+//api/search/results
 
-
-router.post("/search", asyncHandler(async (req, res) => {
+router.post("/results", asyncHandler(async (req, res) => {
     const { results } = req.body;
 
     const cars = await Car.findAll({
