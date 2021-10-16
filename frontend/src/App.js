@@ -10,7 +10,6 @@ import HomePage from "./components/HomePage";
 import LoginFormPage from './components/LoginFormPage';
 import UploadPage from './components/UploadPage'
 import Car from "./components/Car/SingleCar";
-import Edit from './components/Edit/EditForm';
 import Profile from "./components/Profile/profile";
 import SearchPage from "./components/Search/Search";
 
@@ -40,9 +39,6 @@ function App() {
           </Route>
           <Route path="/car/:carId">
             <Car />
-          </Route>
-          <Route path="/car/:carId/edit">
-            <Edit />
           </Route>
           <Route path='/profile/:userId'>
             <Profile />
