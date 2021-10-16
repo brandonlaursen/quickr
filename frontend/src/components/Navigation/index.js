@@ -44,6 +44,7 @@ function Navigation({ isLoaded }){
     setSearchTerm('')
     ul.current.classList.remove('hidden');
     setCount((oldCount) => oldCount + 1)
+    document.querySelector('.searchResultsContainer').classList.remove('hidden')
   }
   // const cars = useSelector((state) => state.car);
 
@@ -76,7 +77,10 @@ function Navigation({ isLoaded }){
   }
 
   const getTheResults = () => {
-    document.querySelector('.searchResultsContainer').classList.remove('hidden')
+    if(searchTerm.length) {
+      return;
+    }
+
   }
 
   const disappear = () => {
