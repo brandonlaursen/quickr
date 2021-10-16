@@ -12,7 +12,7 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const location = useLocation();
-  //search stuff
+  
   const carSearch = useSelector((state) => state.search.cars.cars);
   const ul = useRef(null)
 
