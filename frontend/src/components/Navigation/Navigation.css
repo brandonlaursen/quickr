@@ -141,7 +141,7 @@
 }
 .searchResultsContainer a, .searchResultsContainer li{
   list-style-type: none;
-  padding: .5rem;
+  padding: .1rem;
   border-radius: 1rem;
   text-decoration: none;
   color: black;
