@@ -74,7 +74,7 @@ function EditCar () {
             onChange={updateImageUrl}
           />
         <button type="submit" className='editSubmitButton'>Submit</button>
-        <NavLink to="/"> <button type="button" className='editCancelButton'>Cancel</button> </NavLink>
+            <button onClick={() => setShowModal(false)}type="button" className='editCancelButton'>Cancel</button>
         </form>
       </div>
     </div>

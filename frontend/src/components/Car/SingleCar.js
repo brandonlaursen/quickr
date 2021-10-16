@@ -111,7 +111,7 @@ const Car = () => {
         <img src={car?.imageUrl} alt="car" className='carImage' ></img>
         <div className='buttonContainer'>
           <button onClick={removeCar} className='delete'>Delete</button>
-          <NavLink to="/"> <button className='back'>Back to Images</button> </NavLink>
+          <NavLink to={`/profile/${car?.User.id}`}> <button className='back'>Back to Images</button> </NavLink>
           <EditCarInfo />
           {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
         </div>
