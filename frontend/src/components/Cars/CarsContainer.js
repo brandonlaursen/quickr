@@ -16,9 +16,6 @@ const CarsContainer = () => {
 
   const users = useSelector(state => state.users);
 
-
-
-
   useEffect(() => {
     dispatch(getUserCars(userId));
     dispatch(loadTheUsers());
@@ -57,4 +54,4 @@ const CarsContainer = () => {
 export default CarsContainer;
 
 
-//<NavLink to={`/profile/${user.id}`} >
+
