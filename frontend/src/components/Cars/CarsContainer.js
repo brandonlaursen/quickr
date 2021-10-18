@@ -31,7 +31,7 @@ const CarsContainer = () => {
       <div className='singleCarBackgroundBottom2'></div>
       <div className='userProfileInfoContainer'>
         <img src={users[userId]?.profilePicUrl} alt="car"  className='profileHomePic'></img>
-        <h1 className='homeprofilename'>Hello, {users[userId]?.username} </h1>
+        <h1 className='homeprofilename'>{users[userId]?.username} </h1>
         {/* <h2> {users[userId]?.description}</h2> */}
       </div>
       <div className='carImageContainer'>
