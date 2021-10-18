@@ -1,15 +1,12 @@
 import styles from './Car.css'
 import { getCar } from '../../store/cars';
 import { useSelector, useDispatch } from 'react-redux';
-import { createElement, useEffect, useState } from "react";
-import { restoreUser } from '../../store/session'
+import { useEffect, useState } from "react";
 import { useParams } from 'react-router';
 import { NavLink, useHistory  } from 'react-router-dom';
 import { deleteCar } from '../../store/cars';
 import { getUserCars } from '../../store/cars';
 import EditCarInfo from '../EditFormModal';
-
-//comment stuff
 import { getAllComments, createComment, deleteComment, editComment } from '../../store/comment';
 
 const Car = () => {
@@ -19,11 +16,7 @@ const Car = () => {
   const { carId } = useParams();
   const car = useSelector(state => state.car[carId]);
 
-
-  // const userOwner = useSelector((state) => state.user.user);
-
-  //comment stuff
-  const user = useSelector(state => state.session.user)
+  const user = useSelector(state => state.session.user);
   const comments = useSelector(state => state.comments.comments);
 
   const [newComment, setNewComment] = useState('');
@@ -31,7 +24,7 @@ const Car = () => {
   const [disabler, setDisabler] = useState(false);
 
   useEffect(() => {
-    dispatch(getCar(carId))
+    dispatch(getCar(carId));
     dispatch(getAllComments(carId));
 
   },[dispatch, carId])
@@ -50,19 +43,19 @@ const Car = () => {
 
   const deleteAComment = async(e, commentId) => {
     e.preventDefault();
-    await dispatch(deleteComment(carId, commentId))
+    await dispatch(deleteComment(carId, commentId));
 
   }
 
 
-  const editAComment = async (e, comment, commentId, carId) => {
-    e.preventDefault();
-    const payload = {
-      comment
-    }
+  // const editAComment = async (e, comment, commentId, carId) => {
+  //   e.preventDefault();
+  //   const payload = {
+  //     comment
+  //   }
 
-    dispatch(editComment(payload, commentId, carId)).then(() => dispatch(getAllComments(carId)));
-  }
+  //   dispatch(editComment(payload, commentId, carId)).then(() => dispatch(getAllComments(carId)));
+  // }
 
   const hideComment = (commentId) => {
     const comment1 = document.querySelector(`.comment${commentId}`);
@@ -74,10 +67,10 @@ const Car = () => {
     } else {
       comment1.classList.add("hidden");
       input.classList.remove('hidden');
-      setDisabler(true)
+      setDisabler(true);
     }
   }
-//  const car = cars.find((car) => car.id === carId);
+
 
   const submitEdit = (commentId) => {
     const comment1 = document.querySelector(`.comment${commentId}`);
@@ -89,17 +82,15 @@ const Car = () => {
     dispatch(editComment(payload, commentId, +carId)).then(() => dispatch(getAllComments(carId)));
     comment1.classList.remove('hidden');
     input.classList.add('hidden');
-    setDisabler(false)
+    setDisabler(false);
   }
 
   const removeCar = (e) => {
     e.preventDefault();
 
-    dispatch(deleteCar(carId)).then(() => dispatch(getUserCars(user.id)))
-    history.push('/')
+    dispatch(deleteCar(carId)).then(() => dispatch(getUserCars(user.id)));
+    history.push('/');
   }
-
-
 
   return (
     <div>
@@ -139,10 +130,7 @@ const Car = () => {
         return <div className={`commentBox ${comment.id}`} id={comment.id} key={comment.id}>
                   <div className='allCommentsContainer'>
                     <div
-
-                      // disabled={true}
                       className={`comment${comment.id}`}
-                      // value={comment.comment}
                     >
                   <div className='COMMENT'>
                     {/* <NavLink to ={`/profile/${comment.User?.id}`} ><img src={comment.User?.profilePicUrl} alt="car" className='userCommentProfilePic'></img> </NavLink> */}

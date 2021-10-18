@@ -3,15 +3,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import * as sessionActions from '../../store/session';
 import { NavLink, useHistory  } from 'react-router-dom';
 import './ProfileButton.css';
-// import { useParams } from 'react-router';
 
 function ProfileButton() {
   const dispatch = useDispatch();
   const [showMenu, setShowMenu] = useState(false);
   const history = useHistory();
-  // const { userId } = useParams();
 
-  const user = useSelector(state => state.session.user)
+  const user = useSelector(state => state.session.user);
 
   const openMenu = () => {
     if (showMenu) return;

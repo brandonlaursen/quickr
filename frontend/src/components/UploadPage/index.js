@@ -3,15 +3,15 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { createCar } from '../../store/cars';
 import { getUserCars } from '../../store/cars';
 
 function Upload () {
   const history = useHistory();
   const dispatch = useDispatch();
-  const user = useSelector(state => state.session.user)
-  const car = useSelector(state => state.car.list)
+  const user = useSelector(state => state.session.user);
+  const car = useSelector(state => state.car.list);
 
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -30,11 +30,10 @@ function Upload () {
       userId: user.id
     };
 
-    dispatch(createCar(payload)).then(() => dispatch(getUserCars(user.id)))
-    // console.log(car)
-  //  if(car) history.push(`/car/${car.id}`)
+   dispatch(createCar(payload)).then(() => dispatch(getUserCars(user.id)))
+
    if(car) history.push('/')
-  }
+  };
 
   return(
     <div className='uploadContainer'>
@@ -65,7 +64,7 @@ function Upload () {
             value={imageUrl}
             onChange={updateImageUrl}
           />
-        <button type="submit" className='uploadButton'>Upload Car</button>
+        <button type="submit" className='uploadButton' onSubmit={(e) => e.preventDefault()}>Upload Car</button>
         <NavLink to="/"> <button type="button"className='uploadCancel' >Cancel</button> </NavLink>
         </form>
       </div>

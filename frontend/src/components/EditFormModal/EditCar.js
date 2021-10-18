@@ -1,23 +1,16 @@
-
 import './EditForm.css';
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useState } from 'react';
 import { editCar } from '../../store/cars';
-import { getUserCars } from '../../store/cars';
 import { getCar } from '../../store/cars';
-import { Redirect, useParams } from 'react-router';
+import { useParams } from 'react-router';
 import { useShowModal } from '../../context/showModal';
 
 
 
 function EditCar () {
-  const history = useHistory();
   const dispatch = useDispatch();
-  const user = useSelector(state => state.session.user)
-  // const car = useSelector(state => state.car[carId])
   const { carId } = useParams();
 
   const { setShowModal } = useShowModal();
@@ -41,7 +34,6 @@ function EditCar () {
     dispatch(editCar(payload, carId)).then(() => dispatch(getCar(carId)))
     .then(() => setShowModal(false));
 
-  //  if(car) history.push('/')
   }
 
   return(

@@ -4,7 +4,7 @@ const LOAD_CARS = 'cars/loadCars'
 const LOAD_CAR = 'cars/loadCar'
 const ADD_CAR = 'cars/addCar'
 const EDIT_CAR = 'cars/addCar'
-// const REMOVE_CAR = 'cars/removeCar'
+
 
 // ---------------------------------------------------------------------
 
@@ -35,7 +35,7 @@ const EDIT_CAR = 'cars/addCar'
 
 
 
-//load all cars WORKS
+//LOAD ALL CARS
 const loadCars = (cars, userId) => {
   return {
     type: LOAD_CARS,
@@ -44,7 +44,7 @@ const loadCars = (cars, userId) => {
   }
 }
 
-//get all the cars of a user works
+//GET ALL CARS OF A SPECIFIC USER
 export const getUserCars = (userId) => async(dispatch) => {
   const res = await fetch(`/api/cars/${userId}`, {
     method: "GET",
@@ -56,9 +56,8 @@ export const getUserCars = (userId) => async(dispatch) => {
   dispatch(loadCars(cars, userId))
 }
 
-// ---------------------------------------------------------------------
 
-// load a single car Works
+//LOAD A SINGLE CAR
 const loadCar = (car) => {
   return {
     type: LOAD_CAR,
@@ -66,7 +65,7 @@ const loadCar = (car) => {
   }
 }
 
-//get a single car with a specific id works
+//GET A CAR OF A SPECIFIC ID
 export const getCar = (carId) => async(dispatch) => {
   const res = await fetch(`/api/cars/car/${carId}`, {
     method: "GET",
@@ -79,9 +78,8 @@ export const getCar = (carId) => async(dispatch) => {
   dispatch(loadCar(car))
 }
 
-// ---------------------------------------------------------------------
 
-//add a new car WORKS
+//ADD A NEW CAR
 const addCar = (car) => {
   return {
     type: ADD_CAR,
@@ -89,7 +87,7 @@ const addCar = (car) => {
   }
 }
 
-// upload a new car WORKS
+//UPLOAD A NEW
 export const createCar = (newCar) => async dispatch => {
   const res = await csrfFetch('/api/cars/', {
         method: 'POST',
@@ -104,16 +102,9 @@ export const createCar = (newCar) => async dispatch => {
   }
 }
 
-// ---------------------------------------------------------------------
-//WORKS
-// const removeCar = (carId) => {
-//   return {
-//     type: REMOVE_CAR,
-//     payload: carId,
-//   }
-// }
 
-//WORKS
+
+//DELETE A SPECIFIC CAR
 export const deleteCar = (carId) => async dispatch => {
   const res = await csrfFetch(`/api/cars/car/${carId}/delete`, {
       method: 'DELETE',
@@ -124,17 +115,14 @@ export const deleteCar = (carId) => async dispatch => {
   return car;
 
 }
-// ---------------------------------------------------------------------
 
-//WORKING ON EDIT IMAGE
-//const EDIT_CAR = 'cars/addCar'
-
+//UPDATE A CAR
 const update = (carId) => ({
   type: EDIT_CAR,
   payload: carId,
 });
 
-
+//EDIT A CAR
 export const editCar = (payload, carId) => async dispatch => {
   const res = await csrfFetch(`/api/cars/car/${carId}/edit`, {
     method: 'PUT',
@@ -149,14 +137,8 @@ export const editCar = (payload, carId) => async dispatch => {
   return car;
 }
 
-// ---------------------------------------------------------------------
 
-
-
-
-
-
-//get all cars
+//GET ALL CARS
 export const getCars = () => async (dispatch) => {
   const response = await fetch('/api/cars', {
     method: "GET",
@@ -174,14 +156,12 @@ export const getCars = () => async (dispatch) => {
 const initialState = {cars:null, car:null};
 
 const carsReducer = (state = initialState, action) => {
-  // let newState;
   switch(action.type) {
     case LOAD_CARS:
       return {...state, cars: action.payload.car}
     case LOAD_CAR:
       return {...state, [action.payload.car.id]:action.payload.car}
     case ADD_CAR:
-      // if(!state.cars[action.payload.car.id])
       const newState = {
         ...state, list: { ...state.cars, test: action.payload }
       }

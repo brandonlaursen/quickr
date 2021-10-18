@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import ProfileButton from './ProfileButton';
 import { useState, useEffect, useRef } from 'react';
@@ -12,16 +12,62 @@ function Navigation({ isLoaded }){
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
   const location = useLocation();
-  
+
   const carSearch = useSelector((state) => state.search.cars.cars);
-  const ul = useRef(null)
+  const ul = useRef(null);
 
   const [count, setCount] = useState(0);
   const [searchTerm, setSearchTerm] = useState('')
-  const [searchResults, setSearchResults] = useState([]);
 
+  const submit = () => {
+    dispatch(findAllCars(searchTerm))
+    setSearchTerm('')
+    ul.current.classList.remove('hidden');
+    setCount((oldCount) => oldCount + 1)
+    document.querySelector('.searchResultsContainer').classList.remove('hidden')
+  }
+
+
+  useEffect(()=> {
+    document.querySelector('.no-results').classList.add('hidden')
+    dispatch(findAllCars('asdfasdfasdfasdfasdf'))
+    setCount(0)
+
+  }, [location]);
+
+  useEffect(() => {
+
+      if(carSearch?.length < 1 && count > 0) {
+
+        document.querySelector('.no-results').classList.remove('hidden')
+      }
+      if(carSearch?.length > 1 || count === 0){
+        document.querySelector('.no-results').classList.add('hidden')
+      }
+      setCount(0)
+  },[carSearch]);
+
+  const getRidOfResults = (e) => {
+    if(!e.currentTarget.contains(e.relatedTarget)) {
+      document.querySelector('.searchResultsContainer').classList.add('hidden');
+    }
+
+  }
+
+  const getTheResults = () => {
+    if(searchTerm.length) {
+      return;
+    }
+
+  };
+
+  const disappear = () => {
+    document.querySelector('.searchResultsContainer').classList.add('hidden')
+    dispatch(findAllCars('zxxcv!23124@312122'))
+  };
 
   let sessionLinks;
+
   if (sessionUser) {
     sessionLinks = (
       <>
@@ -39,55 +85,6 @@ function Navigation({ isLoaded }){
       </>
     );
   }
-  const submit = () => {
-    dispatch(findAllCars(searchTerm))
-    setSearchTerm('')
-    ul.current.classList.remove('hidden');
-    setCount((oldCount) => oldCount + 1)
-    document.querySelector('.searchResultsContainer').classList.remove('hidden')
-  }
-  // const cars = useSelector((state) => state.car);
-
-  useEffect(()=> {
-    document.querySelector('.no-results').classList.add('hidden')
-    dispatch(findAllCars('asdfasdfasdfasdfasdf'))
-    setCount(0)
-
-  }, [location]);
-
-
-
-  useEffect(() => {
-
-      if(carSearch?.length < 1 && count > 0) {
-
-        document.querySelector('.no-results').classList.remove('hidden')
-      }
-      if(carSearch?.length > 1 || count === 0){
-        document.querySelector('.no-results').classList.add('hidden')
-      }
-      setCount(0)
-  },[carSearch])
-
-  const getRidOfResults = (e) => {
-    if(!e.currentTarget.contains(e.relatedTarget)) {
-      document.querySelector('.searchResultsContainer').classList.add('hidden')
-    }
-
-  }
-
-  const getTheResults = () => {
-    if(searchTerm.length) {
-      return;
-    }
-
-  }
-
-  const disappear = () => {
-    document.querySelector('.searchResultsContainer').classList.add('hidden')
-    dispatch(findAllCars('zxxcv!23124@312122'))
-  }
-
 
   return (
     <div>

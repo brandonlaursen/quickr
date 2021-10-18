@@ -1,24 +1,17 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Redirect } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 import Footer from '../Footer/Footer';
 import './HomePage.css'
-import CarsContainer from '../Cars/CarsContainer';
-import Car from '../Car/SingleCar'
-
-
 import { getCars } from '../../store/cars';
 
-function HomePage({ isLoaded }) {
+function HomePage() {
 
   const dispatch = useDispatch();
   const cars = useSelector(state => state.car.cars);
 
   useEffect(() => {
     dispatch(getCars());
-
-    //working on this
-    // dispatch(restoreUser()).then(() => dispatch(getCar(car.id)));
 
   },[dispatch])
 
@@ -55,7 +48,6 @@ function HomePage({ isLoaded }) {
           <h2 className='homeTitle'> Find your dream your car.</h2>
           <h3 className='homeDescription'>Join like minded car enthusiasts today.</h3>
           <NavLink to="/signup" className='signupButtonHome'>Sign Up</NavLink>
-          {/* <Car/> */}
         </div>
       </div>
     );
