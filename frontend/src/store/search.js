@@ -1,6 +1,6 @@
 import { csrfFetch } from "./csrf";
 
-
+//SEARCH FOR CARS
 const SEARCH_CARS = "results/searchCars";
 
 const searchCars = (cars) => {
@@ -10,6 +10,7 @@ const searchCars = (cars) => {
   };
 };
 
+//FIND ALL CARS SEARCH
 export const findAllCars = (results) => async (dispatch) => {
   const res = await csrfFetch('/api/search/results', {
     method: 'POST',

@@ -27,6 +27,7 @@ function LoginFormPage() {
         if (data && data.errors) setErrors(data.errors);
       });
   }
+
   const demo = (e) => {
     e.preventDefault();
     setCredential("Demo-lition");
@@ -49,7 +50,6 @@ function LoginFormPage() {
             {errors.map((error, idx) => <li key={idx}>{error}</li>)}
           </ul>
           <label class='userLogin'>
-            {/* Username or Email */}
             <input
               type="text"
               value={credential}
@@ -60,7 +60,6 @@ function LoginFormPage() {
             />
           </label>
           <label class='passwordLogin'>
-            {/* Password */}
             <input
               type="password"
               value={password}

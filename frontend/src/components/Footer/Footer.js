@@ -1,8 +1,4 @@
-import { useSelector } from 'react-redux';
-import { NavLink, Redirect } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-
-import './Footer.css'
+import './Footer.css';
 
 
 function Footer() {

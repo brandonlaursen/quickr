@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Modal } from '../../context/Modal';
-// import LoginForm from './LoginForm';
+
 import EditCar from './EditCar';
 import { useShowModal } from '../../context/showModal';
 import './EditForm.css';
 
 function EditCarInfo() {
-  // const [showModal, setShowModal] = useState()
   const { showModal, setShowModal} = useShowModal();
 
   const opener = () => {

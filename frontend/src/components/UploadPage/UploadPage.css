@@ -1,7 +1,7 @@
-
 .signUpTitleUpload {
   margin-left: 7.3rem;
 }
+
 .uploadContainer{
   display: flex;
   position: relative;
@@ -12,9 +12,7 @@
   flex-flow:column;
   background-color:transparent;
   width: 30rem;
-  /* padding-left: 9.9rem; */
 }
-
 
 .carForm{
   margin-top: 3rem;

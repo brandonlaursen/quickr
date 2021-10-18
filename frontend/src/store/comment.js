@@ -3,8 +3,8 @@ import { csrfFetch } from './csrf';
 
 
 
-// ----POST A COMMENT----
 
+//POST A COMMENT
 const POST_COMMENT = 'users/PostComments';
 
 const addComment = (comment) => {
@@ -14,6 +14,7 @@ const addComment = (comment) => {
   }
 }
 
+//CREATE A COMMENT
 export const createComment = (newComment) => async dispatch => {
   const { userId, carId, comment } = newComment;
 
@@ -33,7 +34,7 @@ export const createComment = (newComment) => async dispatch => {
   }
 }
 
-// ----GET ALL COMMENT----
+//GET ALL COMMENTS
 const GET_COMMENTS = 'users/getComments';
 
 const allComments = (comment) => {
@@ -43,6 +44,7 @@ const allComments = (comment) => {
   }
 }
 
+//GET ALL COMMENTS OF A SPECIFIC CAR
 export const getAllComments = (carId) => async (dispatch) => {
   const res = await csrfFetch(`/api/cars/car/${carId}/comments`, {
     method: 'GET'
@@ -51,20 +53,11 @@ export const getAllComments = (carId) => async (dispatch) => {
   if(res.ok) {
     const data = await res.json();
     dispatch(allComments(data));
-    // return res;
   }
 }
 
-// ----DELETE COMMENT----
-// const DEL_COMMENTS = 'users/delComments';
 
-// const deleteAComment = (comment) => {
-//   return {
-//     type: DEL_COMMENTS,
-//     payload: comment
-//   }
-// }
-
+//DELETE A COMMMENT
 export const deleteComment = (carId, commentId) => async(dispatch) => {
   const res = await csrfFetch(`/api/cars/car/${carId}/comment/${commentId}/delete`, {
     method: 'DELETE'
@@ -78,7 +71,7 @@ export const deleteComment = (carId, commentId) => async(dispatch) => {
 }
 
 
-// ----EDIT COMMENT----
+//EDIT A COMMENT
 const EDIT_COMMENT = 'users/editComment';
 
 const editAComment = (comment) => {
@@ -88,7 +81,7 @@ const editAComment = (comment) => {
   }
 }
 
-
+//EDIT A COMMENT
 export const editComment = (payload, commentId, carId,) => async(dispatch) => {
   const res = await csrfFetch(`/api/cars/car/${carId}/comment/${commentId}/edit`, {
     method: 'PUT',
@@ -104,8 +97,8 @@ export const editComment = (payload, commentId, carId,) => async(dispatch) => {
 }
 
 
-//trying a different way to apporach reducers
-// ---------------------------------
+//Trying a different way to apporach reducers
+
 const initialState = {};
 
 const commentReducer = (state = initialState, action) => {

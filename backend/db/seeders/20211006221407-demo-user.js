@@ -14,28 +14,28 @@ module.exports = {
       },
       {
         email: faker.internet.email(),
-        username: 'FakeUser1',
+        username: 'CarFantatic',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         profilePicUrl: 'https://images.statusfacebook.com/profile_pictures/cars/cars_profile_pictures_08.jpg',
         description: 'Hello'
       },
       {
         email: faker.internet.email(),
-        username: 'FakeUser2',
+        username: 'SpeedRacer',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         profilePicUrl: 'https://www.rxwallpaper.site/wp-content/uploads/exotic-cars-wallpapers-wallpaper-cave-epic-car-wallpapers-2.jpg',
         description: 'Hello'
       },
       {
         email: faker.internet.email(),
-        username: 'FakeUser3',
+        username: 'CarLover2',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         profilePicUrl: 'http://topworldauto.com/photos/d7/c7/lightning-mcqueen-red-car-from-disney-39-s-movie-cars-625.jpg',
         description: 'Hello'
       },
       {
         email: faker.internet.email(),
-        username: 'FakeUser4',
+        username: 'DodgeFan',
         hashedPassword: bcrypt.hashSync(faker.internet.password()),
         profilePicUrl: 'https://moneyinc.com/wp-content/uploads/2020/11/BMW-Steering-Wheel.jpg',
         description: 'Hello'

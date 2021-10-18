@@ -7,8 +7,9 @@ const { Car, Comment, User } = require("../../db/models");
 const router = express.Router();
 
 
+// -----------------CARS------------------------
 
-//get all cars of any user WORKS
+//GET ALL CARS
 router.get('/', asyncHandler(async(req, res) => {
   const car = await Car.findAll();
 
@@ -16,7 +17,7 @@ router.get('/', asyncHandler(async(req, res) => {
 }))
 
 
-// get all cars of specific user WORKS
+//GET ALL CARS OF A SPECIFIC USER
 router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
   const userId = parseInt(req.params.id, 10);
 
@@ -28,15 +29,7 @@ router.get('/:id(\\d+)', asyncHandler(async (req, res) => {
 }));
 
 
-// get single car works
-// router.get('/cars/:id(\\d+)', asyncHandler(async (req, res) => {
-//   const carId = parseInt(req.params.id, 10);
-//   const car = await Car.findByPk(carId)
-//   return res.json({ car })
-// }));
-
-
-// get a single car(read) works
+//GET A SINGLE CAR
 router.get('/car/:id', asyncHandler(async(req, res) => {
 
   const id = parseInt(req.params.id, 10);
@@ -46,37 +39,29 @@ router.get('/car/:id', asyncHandler(async(req, res) => {
 }))
 
 
-
-//upload a car(create) WORKS
+//UPLOAD A CAR
 router.post('/', asyncHandler(async(req, res) => {
   const { userId, name, description, imageUrl } = req.body;
 
   const car = await Car.build({ userId, name, description, imageUrl });
 
   await car.save();
-  // const cars = await Car.findAll({ where: { userId }});
   return res.json(car)
-
 }));
 
 
-//delete a car(destroy) WORKS
+//DELETE A CAR
 router.delete('/car/:id/delete', asyncHandler(async(req, res) => {
   const id = parseInt(req.params.id, 10);
 
   const car = await Car.findByPk(id);
 
-  // const userId = car.userId
-
   await car.destroy();
-  // const cars = await Car.findAll({ where: { userId } });
   return res.json({ car })
 }))
 
 
-
-
-//edit a car(update) Works
+//EDIT A CAR
 router.put('/car/:id/edit', asyncHandler(async(req, res) => {
   const { description, name, imageUrl } = req.body;
 
@@ -88,14 +73,11 @@ router.put('/car/:id/edit', asyncHandler(async(req, res) => {
   return res.json(car);
 }));
 
-// -----------------COMMENTS------------------------
-//---------------WORKING ON TBD---------------------
-//Goals:  view comments
-      //  edit comments
-      //  delete commments
-      //  post comments
 
-// ----Validate comment----
+// -----------------COMMENTS------------------------
+
+
+//VALIDATE COMMENT
 const validateComment = [
   check('comment')
     .exists({ checkFalsy: true })
@@ -103,9 +85,7 @@ const validateComment = [
   handleValidationErrors
 ]
 
-// ----POST A COMMENT----
-// api/cars/car/:id/comment
-
+//POST A COMMENT
 router.post("/car/:id/comment", validateComment, asyncHandler(async(req, res) => {
   const { userId, carId, comment } = req.body;
   const newComment = await Comment.build({ userId, carId, comment });
@@ -125,9 +105,7 @@ router.post("/car/:id/comment", validateComment, asyncHandler(async(req, res) =>
 }));
 
 
-// ----GET All COMMENT----
-// api/cars/car/:id/comment
-
+//GET ALL COMMENTS OF A SPECIFIC CAR
 router.get('/car/:id/comments', asyncHandler(async(req, res) => {
   const carId = parseInt(req.params.id, 10);
 
@@ -142,9 +120,8 @@ router.get('/car/:id/comments', asyncHandler(async(req, res) => {
 
 }))
 
-// DELETE COMMENT
-// api/cars/car/:carId/comment/:commentId/delete
 
+// DELETE COMMENT
 router.delete('/car/:carId/comment/:commentId/delete', asyncHandler(async(req, res) => {
   const carId = parseInt(req.params.carId, 10);
   const commentId = parseInt(req.params.commentId, 10);

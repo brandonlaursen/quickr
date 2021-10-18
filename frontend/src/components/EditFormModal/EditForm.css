@@ -1,6 +1,6 @@
-.modal-background{
-  /* background-color: black; */
-}
+/* .modal-background{
+
+} */
 
 .editFormContainer {
   display: flex;
@@ -15,10 +15,10 @@
   padding-left: 9.9rem;
 }
 
-.editForm {
-  /* margin-right: 23rem; */
+/* .editForm {
 
-}
+
+} */
 
 .editNameInput{
   outline: 0;
@@ -31,7 +31,6 @@
   font-size: 14px;
   margin-top: 15px;
   border-radius: .2rem;
-
 }
 
 .editDesInput {

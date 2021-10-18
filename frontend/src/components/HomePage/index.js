@@ -1,30 +1,24 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { NavLink, Redirect } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useEffect } from 'react';
 import Footer from '../Footer/Footer';
-import './HomePage.css'
-import CarsContainer from '../Cars/CarsContainer';
-import Car from '../Car/SingleCar'
-
-
 import { getCars } from '../../store/cars';
+import './HomePage.css'
 
-function HomePage({ isLoaded }) {
+
+
+function HomePage() {
 
   const dispatch = useDispatch();
   const cars = useSelector(state => state.car.cars);
+  const sessionUser = useSelector(state => state.session.user);
 
   useEffect(() => {
     dispatch(getCars());
 
-    //working on this
-    // dispatch(restoreUser()).then(() => dispatch(getCar(car.id)));
 
   },[dispatch])
 
-
-
-  const sessionUser = useSelector(state => state.session.user);
 
   let sessionLinks;
   if (sessionUser) {
@@ -37,10 +31,7 @@ function HomePage({ isLoaded }) {
         <div className='carImages2'>
           {cars && cars.map((car) =>
           <div >
-            {/* <h1 className='carName'>{car.name}</h1> */}
-            {/* <img src={car.imageUrl} alt="car" className='carImage'></img> */}
             <NavLink to={`/car/${car.id}`}><img src={car.imageUrl} alt="car" className='carImage2' ></img></NavLink>
-            {/* <p className='carDescription'>{car.description}</p> */}
           </div>
           )}
         </div>
@@ -55,7 +46,6 @@ function HomePage({ isLoaded }) {
           <h2 className='homeTitle'> Find your dream your car.</h2>
           <h3 className='homeDescription'>Join like minded car enthusiasts today.</h3>
           <NavLink to="/signup" className='signupButtonHome'>Sign Up</NavLink>
-          {/* <Car/> */}
         </div>
       </div>
     );

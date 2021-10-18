@@ -1,6 +1,6 @@
 const LOAD_USERS = "users/LOAD";
 
-//edit this file later
+//LOAD USERS
 const loadUsers = (data) => {
   return {
     type: LOAD_USERS,
@@ -9,9 +9,9 @@ const loadUsers = (data) => {
 };
 
 export const loadTheUsers = () => async (dispatch, getState) => {
-  const allusers = await fetch(`/api/users/allUsers`);
-  const allusersarray = await allusers.json();
-  dispatch(loadUsers(allusersarray));
+  const allUsers = await fetch(`/api/users/allUsers`);
+  const allUsersArray = await allUsers.json();
+  dispatch(loadUsers(allUsersArray));
 };
 
 const initialState = {};

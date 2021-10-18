@@ -1,13 +1,13 @@
 const express = require("express");
 const asyncHandler = require("express-async-handler");
-const { User, Car } = require("../../db/models");
+const { Car } = require("../../db/models");
 const { Op } = require("sequelize");
 
 
 const router = express.Router();
 
-//api/search/results
 
+//SEARCH FOR A CAR
 router.post("/results", asyncHandler(async (req, res) => {
     const { results } = req.body;
 
@@ -22,11 +22,6 @@ router.post("/results", asyncHandler(async (req, res) => {
     res.json({ cars });
   })
 );
-
-
-
-
-
 
 
 module.exports = router;
