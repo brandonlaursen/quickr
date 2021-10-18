@@ -9,15 +9,29 @@ body, html {
 body{
   background-image: url('https://www.rxwallpaper.site/wp-content/uploads/10-excellent-exotic-cars-wallpapers-car-wallpaper-hd.jpg');
   background-size: cover;
+  background-repeat: no-repeat;
+  transition: 100s;
   height: 100%;
   width: 100%;
   position: absolute;
   margin-top: 0;
   display: block;
   margin: 0 auto;
-  /* color: #f5f5f5; */
-  /* background-repeat:no-repeat; */
-  /* overflow: hidden; */
+  animation: swap 80s ease infinite;
+}
+
+
+
+@keyframes swap {
+  00%, 11% { background-image: url(https://www.rxwallpaper.site/wp-content/uploads/10-excellent-exotic-cars-wallpapers-car-wallpaper-hd.jpg); }
+  12%, 24% { background-image: url(http://pavbca.com/walldb/original/a/b/4/639002.jpg); }
+  25%, 36% { background-image: url(https://images.pistonheads.com/nimg/43222/Blue_Evora_GT410_Sport_032.jpg); }
+  37%, 49% { background-image: url(https://hdqwalls.com/wallpapers/lamborghini-veneno-supercar.jpg); }
+  50%, 61% { background-image: url(http://3.bp.blogspot.com/-8RBxhIJXOFw/UeHPBWFSvGI/AAAAAAAACuM/TZ0wlkNCwyc/s1600/1302060141P250-14N1.jpg); }
+  62%, 74% { background-image: url(https://i.pinimg.com/originals/f5/7f/c2/f57fc24eac621f1b33fdb0b32adce8b3.jpg); }
+  75%, 86% { background-image: url(https://i.ytimg.com/vi/DeLgOCqEiUg/maxresdefault.jpg); }
+  87%, 99% { background-image: url(http://iliketowastemytime.com/sites/default/files/best-automotive-pt4-lamborghini-diablo-night.jpg); }
+
 }
 
 
