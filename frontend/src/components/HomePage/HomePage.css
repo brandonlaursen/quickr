@@ -1,6 +1,9 @@
 body, html {
   height: 100%;
   width: 100%;
+  /* height: auto;
+  width: auto; */
+
 }
 
 body{
@@ -12,7 +15,11 @@ body{
   margin-top: 0;
   display: block;
   margin: 0 auto;
+  /* color: #f5f5f5; */
+  /* background-repeat:no-repeat; */
+  /* overflow: hidden; */
 }
+
 
 .home2 {
   display: flex;
@@ -47,12 +54,17 @@ body{
   color: black;
   font-weight: 600;
   font-size: 20px;
+  /* vertical-align: middle; */
+  /* margin-left: 35.1rem; */
+
 }
+
 
 .carImageContainer2 {
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  /* align-items: center; */
   justify-content: center;
   z-index: 1;
   margin-top: 1rem;
@@ -76,6 +88,9 @@ body{
 }
 
 .singleCarBackground3 {
+  /* position: absolute; */
+  /* position: fixed; */
+  /* background-color: rgb(37, 37, 37); */
   background-image: url(http://wallpapercave.com/wp/PS22wOo.jpg);
   background-size: cover;
   background-position: center;
@@ -88,11 +103,12 @@ body{
   left: 0;
   top: 0;
   z-index: -10;
-}
 
+}
 .singleCarBackgroundBottom3{
   position: fixed;
   background-color: rgb(255, 255, 255);
+  /* margin-top: 10rem; */
   height: 100%;
   width: 100%;
   margin-left: 0;

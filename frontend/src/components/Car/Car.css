@@ -25,13 +25,13 @@
   top:7%;
   justify-content: center;
   left: 35.5%;
-  right: 35.5%;
+  right: 34.5%;
 }
 
 .singleCarName{
   color: white;
   text-align: center;
-  margin-left: 3rem;
+  /* margin-left: 9rem; */
 }
 
 .descriptionContainer {
