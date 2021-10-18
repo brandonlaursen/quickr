@@ -13,6 +13,7 @@ const Car = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  const { userId } = useParams();
   const { carId } = useParams();
   const car = useSelector(state => state.car[carId]);
 
@@ -92,6 +93,10 @@ const Car = () => {
     history.push('/');
   }
 
+  // {car?.User.id} === user?.id && (
+  //   <button onClick={removeCar} className='delete'>Delete</button>
+  // )}
+
   return (
     <div>
     <div className='singleCarBackground'> </div>
@@ -101,9 +106,13 @@ const Car = () => {
         <h1 className='singleCarName'>{car?.name}</h1>
         <img src={car?.imageUrl} alt="car" className='carImage' ></img>
         <div className='buttonContainer'>
+          <NavLink to={`/profile/${car?.User.id}`}> <button className='back'>Back</button> </NavLink>
+        {car?.User.id === user?.id && (
           <button onClick={removeCar} className='delete'>Delete</button>
-          <NavLink to={`/profile/${car?.User.id}`}> <button className='back'>Back to Images</button> </NavLink>
-          <EditCarInfo />
+          )}
+          {car?.User.id === user?.id && (
+            <EditCarInfo />
+          )}
           {/* <NavLink to={`/car/${car?.id}/edit`}> <button className='edit'>Edit</button> </NavLink> */}
         </div>
         <div className='postedByContainer'>
