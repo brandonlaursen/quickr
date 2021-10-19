@@ -10,19 +10,19 @@ body{
   background-image: url('https://www.rxwallpaper.site/wp-content/uploads/10-excellent-exotic-cars-wallpapers-car-wallpaper-hd.jpg');
   background-size: cover;
   background-repeat: no-repeat;
-  transition: 100s;
+  /* transition: 100s; */
   height: 100%;
   width: 100%;
   position: absolute;
   margin-top: 0;
   display: block;
   margin: 0 auto;
-  animation: swap 80s ease infinite;
+  /* animation: swap 80s ease infinite; */
 }
 
 
 
-@keyframes swap {
+/* @keyframes swap {
   00%, 11% { background-image: url(https://www.rxwallpaper.site/wp-content/uploads/10-excellent-exotic-cars-wallpapers-car-wallpaper-hd.jpg); }
   12%, 24% { background-image: url(http://pavbca.com/walldb/original/a/b/4/639002.jpg); }
   25%, 36% { background-image: url(https://images.pistonheads.com/nimg/43222/Blue_Evora_GT410_Sport_032.jpg); }
@@ -32,7 +32,7 @@ body{
   75%, 86% { background-image: url(https://i.ytimg.com/vi/DeLgOCqEiUg/maxresdefault.jpg); }
   87%, 99% { background-image: url(http://iliketowastemytime.com/sites/default/files/best-automotive-pt4-lamborghini-diablo-night.jpg); }
 
-}
+} */
 
 
 .home2 {
