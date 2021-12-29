@@ -15,6 +15,13 @@ quickr is a clone of the classic flickr, but with a focus on sports cars. Where 
 ![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB)
 ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
+## [Feature List](https://github.com/brandonlaursen/quickr/wiki/Feature-List)
+List of quickr features.
+
+## [Database Schema](https://github.com/brandonlaursen/quickr/wiki/Database-Schema)
+A visualization of the relationship between data.
+
+
 # Splash Page
 ![Screen Shot 2021-12-29 at 4 03 16 PM](https://user-images.githubusercontent.com/83096378/147703265-d6a16110-bc7a-46f7-8f96-076b838ede3e.png)
 
